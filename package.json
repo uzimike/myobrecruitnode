@@ -2,7 +2,7 @@
   "name": "mrp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main":"",
   "scripts": {
     "build-css": "stylus source/stylesheets/index.styl -o static/css",
     "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
