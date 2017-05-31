@@ -1,6 +1,7 @@
 # myobrecruitnode
 
-
+To run the app,
+npm run watch
 
 Note: if you’re on Windows, the clean task needs to use different path separators…
 

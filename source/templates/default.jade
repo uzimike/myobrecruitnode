@@ -1,20 +1,88 @@
 doctype html
-html
+html(lang='en')
   head
-    link(rel='stylesheet', href='/css/index.css')
-    title World Wide Web
+    meta(charset='utf-8')
+    title MYOB Recruit
+    link(rel='stylesheet', type='text/css', href='css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='css/bootstrap-theme.css')
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+    script(src='js/bootstrap.min.js')
   body
-    .header
-      h1.page-title World Wide Web
-
-    ul.nav
-      li: a(href='/') Home
-      li: a(href='#news') News
-      li: a(href='#about') About
-      li: a(href='#contact') Contact
-
-    .main-content
-      block content
-
-    .footer
-      p Copyright © 2020 Futurecorpz. Futurecorpz ® is a Registered Trademark of Futures (un)Ltd. in the Mars Community and other solar systems.
+    #top-border
+    #menu.col-md-2
+      h2 Mike's Business
+      h3 MYOB Recruit
+      nav#side-nav
+        ul
+          li
+            a(href='')
+              span.glyphicon.glyphicon-home
+              | Home
+          li
+            a(href='')
+              span.glyphicon.glyphicon-king
+              | Recruiting
+          li
+            a(href='')
+              span.glyphicon.glyphicon-tree-conifer
+              | Employees
+          li
+            a(href='')
+              span.glyphicon.glyphicon-sound-stereo
+              | Contracts
+          li
+            a(href='')
+              span.glyphicon.glyphicon-cutlery
+              | Application Forms
+          li
+            a(href='')
+              span.glyphicon.glyphicon-record
+              | Test Forms
+          li
+            a(href='')
+              span.glyphicon.glyphicon-sort-by-order
+              | Preferences
+    #content.col-md-10
+      section#section-01.section.section-01.home
+        .section-title
+          h2 Welcome, Mike!
+        article#article-01-01
+          h3 + Create New
+      section#section-02.section.section-02.recruiting
+        .section-title
+          h2 Recruiting
+        article#article-02-01
+          h3 Recruitment Plans
+        article#article-02-02
+          h3 + New Recruitment Plan
+      section#section-03.section.section-03.employees
+        .section-title
+          h2 Employees
+        article#article-03-01
+          h3 Employees
+        article#article-03-02
+          h3 + Create New Employee
+      section#section-04.section.section-04.contracts
+        .section-title
+          h2 Contracts
+        article#article-04-01
+          h3 Contracts
+        article#article-04-02
+          h3 + New Contract
+      section#section-05.section.section-05.application-forms
+        .section-title
+          h2 Application Forms
+        article#article-05-01
+          h3 Application Forms
+        article#article-05-02
+          h3 + Application Form
+      section#section-06.section.section-06.test-forms
+        .section-title
+          h2 Test Forms
+        article#article-06-01
+          h3 Test Forms
+        article#article-06-02
+          h3 + Test Form
+      section#section-07.section.section-07.preferences
+        .section-title
+          h2 Preferences
