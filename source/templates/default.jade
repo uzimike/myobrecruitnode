@@ -13,15 +13,14 @@ html(lang='en')
   body
     #top-border
     #mobile-bar
-      nav#mobile-menu
+      nav#mobile-menu.nav-menu
         ul
           include menu
     #menu.col-md-2
       h2 Mike's Business
       h3 MYOB Recruit
-      nav#side-nav
-        ul
-          include menu
+      nav#side-nav.nav-menu
+        include menu
     #content.col-md-10
       block content
       
