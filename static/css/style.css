@@ -2,6 +2,8 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #eee;
+
 }
 
 h3 {
@@ -20,6 +22,7 @@ h3 {
 }
 
 #menu {
+  background-color: #fff;
   -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,0.2);
   box-shadow: 0 0 40px 0 rgba(0,0,0,0.2);
   z-index: 100;
@@ -27,13 +30,12 @@ h3 {
 
 #content {
   right: 0;
-  background-color: #eee;
   overflow: hidden;
 }
 
 #menu,
 #content {
-  height:100%;
+  min-height:100%;
   position: absolute;
   padding-top: 4px;
 }
@@ -58,6 +60,7 @@ h3 {
   line-height: 60px;
   font-size: 20px;
   text-decoration: none;
+  cursor:pointer;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -73,8 +76,23 @@ h3 {
   margin: 0 15px;
 }
 
+#mobile-bar {
+  display: none;
+}
+
 section {
   height:100%;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+section.active {
+  opacity: 1;
 }
 
 section > .section-title {

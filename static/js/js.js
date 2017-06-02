@@ -2,9 +2,9 @@ $(document).ready(function(){
 
   function sectionMake(string) {
     var sections, activeSection, newSection;
-    sections = document.getElementsByClassName('section');
-    activeSection = sections.getElementsByClassName('active')[0];
-    newSection = sections.getElementsByClassName(string)[0];
+    sections = document.getElementById('content');
+    activeSection = sections.querySelectorAll('section.active')[0];
+    newSection = sections.querySelectorAll('section.'+string)[0];
     switchSection(activeSection, newSection)
   }
 
@@ -15,20 +15,39 @@ $(document).ready(function(){
   }
 
   function addNavActions() {
-    var navs, li, count;
+    var navs, nav, li, count;
     navs = document.getElementsByClassName('nav-ul');
-    li = navs.getElementsByTagName('li');
-    count = 1;
-
-    for (var i = 0; i < li.length; ++i) {
-      li[i].addEventListener('click', function(){sectionMake('section-'+pad2(count))})
-      count++;
+    for (var i = 0; i < navs.length; i++) {
+      nav = navs[i];
+      li = nav.getElementsByClassName('section-li');
+      count = 1;
+      for (var j = 0; j < li.length; j++) {
+        (function(j){
+          var string = 'section-'+pad2(count);
+          var li_a = li[j].getElementsByTagName('a')[0]
+          if (typeof window.addEventListener === 'function'){
+            (function (_string) {
+              li_a.addEventListener(
+                'click',
+                function(){
+                  sectionMake(_string);
+                },
+                false
+              );
+            })(string)
+          }
+          count++;
+        })(j);
+      }
     }
   }
+
 
   function pad2(number) {
     return (number < 10 ? '0' : '') + number;
   }
 
+
+  addNavActions();
 
 });
