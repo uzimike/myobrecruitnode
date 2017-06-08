@@ -106,3 +106,47 @@ section > article {
 section > article > h3 {
   margin-top: 15px;
 }
+
+img.icon {
+  
+}
+
+img.icon.exam {
+  background-image: url('images/exam.png');
+}
+
+img.icon.add {
+  background-image: url('images/add.png');
+}
+
+img.icon.shortlist {
+  background-image: url('images/sticker.png');
+}
+
+img.icon.settings {
+  background-image: url('images/cogwheel-outline.png');
+}
+
+img.icon.trash {
+  background-image: url('images/garbage.png');
+}
+
+img.icon.recruitment-plan {
+  background-image: url('images/curriculum.png');
+}
+
+img.icon.home {
+  background-image: url('images/house.png');
+}
+
+img.icon.contract {
+  background-image: url('images/diploma.png');
+}
+
+img.icon.cv {
+  background-image: url('images/exam.png');
+}
+
+img.icon.employees {
+  background-image: url('images/users.png');
+}

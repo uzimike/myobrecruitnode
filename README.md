@@ -25,3 +25,12 @@ npm run build – this does everything required for the server to run correctly,
 npm run watch – this is the command that is most useful in development. It will watch the entire project for changes and recompile assets or restart the server accordingly.
 
 npm run start – this simply starts the server and does no watching at all.
+
+
+
+
+I took out
+
+    "clean": "rm -rf static/css && mkdir -p static/css",
+
+from package.JSON, just in case
