@@ -3,17 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "watch": "nodemon server.js -e js,pug",
-    "start": "node server.js"
-},
- "dependencies": {
-   "body-parser": "~1.16.0",
-   "cookie-parser": "~1.4.3",
-   "debug": "~2.6.0",
-   "express": "~4.14.1",
-   "morgan": "~1.7.0",
-   "node-sass-middleware": "0.9.8",
-   "pug": "~2.0.0-beta10",
-   "serve-favicon": "~2.3.2"
- }
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "node-sass-middleware": "0.9.8",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2"
+  }
 }
