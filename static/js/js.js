@@ -24,24 +24,23 @@ $(document).ready(function(){
       for (var j = 0; j < li.length; j++) {
         (function(j){
           var string = 'section-'+pad2(count);
-          var li_a = li[j].getElementsByTagName('a')[0]
-          if (typeof window.addEventListener === 'function'){
-            (function (_string) {
+          var li_a = li[j].getElementsByTagName('a')[0];
+          if (typeof window.addEventListener === 'function') {
+            (function (string) {
               li_a.addEventListener(
                 'click',
                 function(){
-                  sectionMake(_string);
+                  sectionMake(string);
                 },
                 false
               );
-            })(string)
+            })(string);
           }
           count++;
         })(j);
       }
     }
   }
-
 
   function pad2(number) {
     return (number < 10 ? '0' : '') + number;

@@ -61,6 +61,7 @@ h3 {
   font-size: 20px;
   text-decoration: none;
   cursor:pointer;
+  padding-left:20px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -74,6 +75,14 @@ h3 {
 
 #side-nav ul li a span {
   margin: 0 15px;
+}
+
+#side-nav ul li .icon {
+  width:40px;
+  height:40px;
+  margin-bottom:-12px;
+  display: inline-block;
+  margin-right:10px;
 }
 
 #mobile-bar {
@@ -107,46 +116,50 @@ section > article > h3 {
   margin-top: 15px;
 }
 
-img.icon {
-  
+.icon {
+  width:150px;
+  height:150px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-img.icon.exam {
-  background-image: url('images/exam.png');
+.icon.exam {
+  background-image: url('/images/exam.png');
 }
 
-img.icon.add {
-  background-image: url('images/add.png');
+.icon.add {
+  background-image: url('/images/add.png');
 }
 
-img.icon.shortlist {
-  background-image: url('images/sticker.png');
+.icon.shortlist {
+  background-image: url('/images/sticker.png');
 }
 
-img.icon.settings {
-  background-image: url('images/cogwheel-outline.png');
+.icon.settings {
+  background-image: url('/images/cogwheel-outline.png');
 }
 
-img.icon.trash {
-  background-image: url('images/garbage.png');
+.icon.trash {
+  background-image: url('/images/garbage.png');
 }
 
-img.icon.recruitment-plan {
-  background-image: url('images/curriculum.png');
+.icon.recruitment-plan {
+  background-image: url('/images/curriculum.png');
 }
 
-img.icon.home {
-  background-image: url('images/house.png');
+.icon.home {
+  background-image: url('/images/house.png');
 }
 
-img.icon.contract {
-  background-image: url('images/diploma.png');
+.icon.contract {
+  background-image: url('/images/diploma.png');
 }
 
-img.icon.cv {
-  background-image: url('images/exam.png');
+.icon.application {
+  background-image: url('/images/resume.png');
 }
 
-img.icon.employees {
-  background-image: url('images/users.png');
+.icon.employees {
+  background-image: url('/images/users.png');
 }
