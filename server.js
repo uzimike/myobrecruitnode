@@ -1,20 +1,20 @@
-var express = require('express')
-  , logger = require('morgan')
-  , app = express()
-  , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
+// require all dependencies
+var express = require('express');
+var app = express();
 
-app.use(logger('dev'))
-app.use(express.static(__dirname + '/static'))
+// set up the template engine
+app.set('views', './views');
+app.set('view engine', 'pug');
 
-app.get('/', function (req, res, next) {
-  try {
-    var html = template({ title: 'Home' })
-    res.send(html)
-  } catch (e) {
-    next(e)
-  }
-})
+// GET response for '/'
+app.get('/', function (req, res) {
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log('Listening on http://localhost:' + (process.env.PORT || 3000))
-})
+    // render the 'index' template, and pass in a few variables
+    res.render('index', { title: 'Hey', message: 'Hello there!' });
+
+});
+
+// start up the server
+app.listen(3000, function () {
+    console.log('Listening on http://localhost:3000');
+});
