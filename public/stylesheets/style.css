@@ -41,14 +41,21 @@ h3 {
   width: -webkit-calc(100% - 300px);
   width: -moz-calc(100% - 300px);
   width: calc(100% - 300px); }
-
-.inner-container {
-  padding: 50px 60px; }
+  #content .inner-container {
+    padding: 50px 60px; }
 
 #menu, #content {
-  height: 100%;
+  min-height: 100%;
   position: absolute;
   padding-top: 4px; }
+
+.logo-container {
+  width: 100%; }
+  .logo-container .logo-inner {
+    padding: 25px; }
+    .logo-container .logo-inner img {
+      width: 100%;
+      height: auto; }
 
 #side-nav ul {
   margin: 0;
@@ -73,8 +80,10 @@ h3 {
       transition: all 0.3s ease; }
       #side-nav ul li a:hover {
         background-color: rgba(0, 0, 0, 0.2); }
-      #side-nav ul li a span {
-        margin: 0 15px; }
+      #side-nav ul li a .inner-container {
+        padding-left: 20px; }
+        #side-nav ul li a .inner-container span {
+          padding: 0 15px; }
 
 section {
   height: 100%; }
@@ -84,5 +93,45 @@ section {
     height: 95%; }
     section > article > h3 {
       margin-top: 15px; }
+
+.icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  transform: translateY(25%); }
+
+.icon.small {
+  width: 40px;
+  height: 40px; }
+
+.icon.medium {
+  width: 140px;
+  height: 140px; }
+
+.icon.large {
+  width: 240px;
+  height: 240px; }
+
+.icon.home {
+  background-image: url("/images/house.png"); }
+
+.icon.recruit {
+  background-image: url("/images/curriculum.png"); }
+
+.icon.employee {
+  background-image: url("/images/users.png"); }
+
+.icon.contract {
+  background-image: url("/images/diploma.png"); }
+
+.icon.application {
+  background-image: url("/images/resume.png"); }
+
+.icon.test {
+  background-image: url("/images/exam.png"); }
+
+.icon.preferences {
+  background-image: url("/images/cogwheel-outline.png"); }
 
 /*# sourceMappingURL=style.css.map */
