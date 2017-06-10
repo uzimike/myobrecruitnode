@@ -4,7 +4,14 @@ html, body {
   padding: 0; }
 
 body {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  background-color: #eee;
+  color: #333; }
+
+h1 {
+  font-size: 40px;
+  font-weight: 300;
+  margin: 0 0 40px; }
 
 h3 {
   font-weight: 300; }
@@ -24,13 +31,19 @@ h3 {
   width: 300px;
   -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
-  z-index: 100; }
+  z-index: 100;
+  background-color: #fff; }
 
 #content {
-  width: 70%;
+  float: left;
   right: 0;
-  background-color: #eee;
-  overflow: hidden; }
+  overflow: hidden;
+  width: -webkit-calc(100% - 300px);
+  width: -moz-calc(100% - 300px);
+  width: calc(100% - 300px); }
+
+.inner-container {
+  padding: 50px 60px; }
 
 #menu, #content {
   height: 100%;
@@ -38,7 +51,7 @@ h3 {
   padding-top: 4px; }
 
 #side-nav ul {
-  margin: 0 -15px;
+  margin: 0;
   padding: 20px 0; }
   #side-nav ul li {
     display: block;

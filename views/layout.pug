@@ -3,10 +3,10 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/tweaks.css')
   body
     #top-border
-    #menu
+    #menu.container
       include menu
-    #content
-      block content
+    #content.container
+      .inner-container
+        block content

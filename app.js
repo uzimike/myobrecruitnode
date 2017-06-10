@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/recruit', recruit);
-app.use('/recruit/plan/submissions', recruit);
+app.use('/recruit/plan/submissions', submissions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

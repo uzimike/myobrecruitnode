@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,600,600i')
 
+$side-width : 300px
+
 html, body
   margin: 0
   padding: 0
 
 body
   font-family: 'Montserrat', sans-serif
+  background-color: #eee
+  color: #333
+
+h1
+  font-size: 40px
+  font-weight: 300
+  margin: 0 0 40px
 
 h3
   font-weight: 300
@@ -22,16 +31,22 @@ h3
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6014a2', endColorstr='#e72178',GradientType=1 )
 
 #menu
-  width: 300px
+  width: #{$side-width}
   -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2)
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2)
   z-index: 100
+  background-color: #fff
 
 #content
-  width: 70%
+  float: left
   right: 0
-  background-color: #eee
   overflow: hidden
+  width: -webkit-calc(100% - #{$side-width})
+  width:    -moz-calc(100% - #{$side-width})
+  width:         calc(100% - #{$side-width})
+
+.inner-container
+  padding: 50px 60px
 
 #menu, #content
   height: 100%
@@ -39,7 +54,7 @@ h3
   padding-top: 4px
 
 #side-nav ul
-  margin: 0 -15px
+  margin: 0
   padding: 20px 0
   li
     display: block
@@ -73,3 +88,19 @@ section
       height: 95%
       > h3
         margin-top: 15px
+
+        
+
+.icon.home
+
+.icon.recruit
+
+.icon.employee
+
+.icon.contract
+
+.icon.application
+
+.icon.test
+
+.icon.preferences
