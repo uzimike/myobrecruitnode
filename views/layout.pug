@@ -5,11 +5,17 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     #top-border
+    #top-bar
     #menu.container
+      .user
+        .user-image
+          img(src='/images/businessman.jpg', alt='Mike', title='Mike')
+        .user-name
+          span Welcome, Mike!
+      include menu
       .logo-container
         .logo-inner
           img(src='/images/logo.png', alt='MYOB Recruit', title='MYOB Recruit')
-      include menu
     #content.container
       .inner-container
         block content

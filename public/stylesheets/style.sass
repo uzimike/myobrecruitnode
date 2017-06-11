@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,600,600i')
 
 $side-width : 300px
+$topborder-height : 4px
+$topbar-height : 60px
 
 html, body
   margin: 0
@@ -19,16 +21,30 @@ h1
 h3
   font-weight: 300
 
+img
+  max-width: 100%
+  height: auto
+
 #top-border
-  position: relative
-  z-index: 999
+  position: absolute
+  z-index: 1000
   width: 100%
-  height: 4px
+  height: #{$topborder-height}
   background: #6014a2
   background: -moz-linear-gradient(left, #6014a2 0%, #e72178 100%)
   background: -webkit-linear-gradient(left, #6014a2 0%, #e72178 100%)
   background: linear-gradient(to right, #6014a2 0%, #e72178 100%)
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6014a2', endColorstr='#e72178',GradientType=1 )
+
+#top-bar
+  display: none
+  width: 100%
+  height: #{$topbar-height}
+  background-color: #fff
+  position: relative
+  z-index: 999
+  -webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,0.5)
+  box-shadow: 0 0 9px 0 rgba(0,0,0,0.5)
 
 #menu
   width: #{$side-width}
@@ -36,6 +52,19 @@ h3
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2)
   z-index: 100
   background-color: #fff
+
+.user
+  padding: 60px 15px 0
+  .user-image
+    text-align: center
+    img
+      border-radius: 50%
+      max-width: 100px
+  .user-name
+    text-align: center
+    padding: 15px 0
+    span
+      font-style: italic
 
 #content
   float: left
@@ -48,7 +77,9 @@ h3
     padding: 50px 60px
 
 #menu, #content
-  min-height: 100%
+  min-height: -webkit-calc(100% - #{$topborder-height})
+  min-height:    -moz-calc(100% - #{$topborder-height})
+  min-height:         calc(100% - #{$topborder-height})
   position: absolute
   padding-top: 4px
 
@@ -56,8 +87,10 @@ h3
   width: 100%
   .logo-inner
     padding: 25px
+    text-align: center
     img
       width: 100%
+      max-width: 180px
       height: auto
 
 #side-nav ul
