@@ -4,7 +4,7 @@ block content
   h1 #{title}
   h2 #{subtitle}
 
-  form
+  form.recruitment-plan-form
     nav.form-nav
       ul
         li
@@ -19,33 +19,49 @@ block content
           a.fs-05 Test
         li
           a.fs-06 Plan Confirmation
-    section.fs-01
-      input(type='text')
-      textarea
-    section.fs-02
-      select
-        option(value='employment type') employment type
-      input(type='text')
-      span per hour, 
-      select
-        option(value='fortnightly') fortnightly
-      input(type='text')
-      span hours per
-      select
-        option(value='week') week
-    section.fs-03
-    section.fs-04
-    section.fs-05
-    section.fs-06
-      label.recruitment-plan
-      br
-      label.job-title
-      br
-      label.job-desc
-      br
-      label.employment-type
-      br
-      label
-      
-    
-    
+    .fs-container
+      .inner-container
+        section.fs.fs-01
+          input#job-title(type='text')
+          textarea#job-desc
+          .next-prev
+            button.next.fsb-02 Next
+        section.fs.fs-02
+          select#employment-type
+            option(value='employment type') employment type
+          input#per-hour-payment(type='text')
+          span per hour, 
+          select#payment-period
+            option(value='fortnightly') fortnightly
+          input#hours(type='text')
+          span hours per
+          select#hours-period
+            option(value='week') week
+          .next-prev
+            button.prev.fsb-01 Previous
+            button.next.fsb-03 Next
+        section.fs.fs-03
+          .next-prev
+            button.prev.fsb-02 Previous
+            button.next.fsb-04 Next
+        section.fs.fs-04
+          .next-prev
+            button.prev.fsb-03 Previous
+            button.next.fsb-05 Next
+        section.fs.fs-05
+          .next-prev
+            button.prev.fsb-04 Previous
+            button.next.fsb-06 Next
+        section.fs.fs-06
+          label.recruitment-plan
+          br
+          label.job-title
+          br
+          label.job-desc
+          br
+          label.employment-type
+          br
+          label
+          .next-prev
+            button.prev.fsb-05 Previous
+            input(type='submit').next
