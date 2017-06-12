@@ -8,7 +8,7 @@ block content
     nav.form-nav
       ul
         li
-          a.fs-01 Plan Name
+          a.fs-01.current Plan Name
         li
           a.fs-02 Job Description
         li
@@ -20,10 +20,32 @@ block content
         li
           a.fs-06 Plan Confirmation
     section.fs-01
+      input(type='text')
+      textarea
     section.fs-02
+      select
+        option(value='employment type') employment type
+      input(type='text')
+      span per hour, 
+      select
+        option(value='fortnightly') fortnightly
+      input(type='text')
+      span hours per
+      select
+        option(value='week') week
     section.fs-03
     section.fs-04
     section.fs-05
     section.fs-06
+      label.recruitment-plan
+      br
+      label.job-title
+      br
+      label.job-desc
+      br
+      label.employment-type
+      br
+      label
+      
     
     
