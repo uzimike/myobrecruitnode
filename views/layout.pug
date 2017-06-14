@@ -2,7 +2,13 @@ doctype html
 html
   head
     title= title
+    meta(charset='utf-8')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='/js/jquery-3.2.1.js')
+    script(type='text/javascript', src='/js/js.cookie.js')
+    script(type='text/javascript', src='/js/jquery.validate.js')
+    script(type='text/javascript', src='/js/jquery.steps.js')
+    script(type='text/javascript', src='/js/global.js')
   body
     #top-border
     #top-bar
@@ -19,5 +25,6 @@ html
         .logo-inner
           img(src='/images/logo.png', alt='MYOB Recruit', title='MYOB Recruit')
     #content.container
-      .inner-container
+      .inner-container.content
         block content
+    footer

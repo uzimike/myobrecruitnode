@@ -2,31 +2,33 @@ extends layout
 
 block content
   h1 #{title}
-  h2 #{subtitle}
+  h2 
+    .icon.small.add 
+    span #{subtitle}
   .create-new
     ul
       li
         a(href='/recruit')
           .inner-container  
-            .icon.small.recruit
+            .icon.medium.recruit
             span Recruitment Plan
       li
         a(href='/employees')
           .inner-container  
-            .icon.small.employee
+            .icon.medium.employee
             span Employee
       li
         a(href='/contracts')
           .inner-container  
-            .icon.small.contract
+            .icon.medium.contract
             span Contract
       li
         a(href='/applications')
           .inner-container  
-            .icon.small.application
+            .icon.medium.application
             span Application
       li
         a(href='/tests')
           .inner-container  
-            .icon.small.test
+            .icon.medium.test
             span Test

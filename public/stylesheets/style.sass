@@ -5,6 +5,9 @@ $max-section-width : 960px
 $topborder-height : 4px
 $topbar-height : 60px
 
+*
+  outline: none !important
+
 html, body
   margin: 0
   padding: 0
@@ -23,7 +26,12 @@ h1
   margin: 0 0 20px
 
 h2
+  margin-bottom: 35px
 
+h2 .icon.small
+  height: 30px
+  margin-right: 5px
+  transform: translateY(7px)
 
 h3
 
@@ -83,8 +91,9 @@ img
   width: -webkit-calc(100% - #{$side-width})
   width:    -moz-calc(100% - #{$side-width})
   width:         calc(100% - #{$side-width})
-  .inner-container
-    padding: 50px 60px
+
+.inner-container.content
+  padding: 50px 60px
 
 #menu, #content
   min-height: -webkit-calc(100% - #{$topborder-height})
@@ -128,52 +137,58 @@ img
         background-color: rgba(123, 0, 255, 0.2)
       .inner-container
         padding-left: 20px
+        .icon
+          transform: translateY(25%)
         span
           padding: 0 15px 0 25px
 
 .recruitment-plan-form
-  .fs-container
-    width: 100%
-    max-width: #{$max-section-width}
-    overflow-x: hidden
-    .inner-container
-      width: auto
-      .fs
-         width: 100%
-         height: 400px
-         position: relative
-         float: left
-         .next-prev
-           position: absolute
-           width: 100%
-           bottom: 0
-           .next
-             float: right
-           .prev
-             float: left
-           input[type='submit'], button
-             background-color: #78019d
-             width: 120px
-             border: none
-             color: #fff
-             text-transform: lowercase
-             font-size: 20px
-             padding: 10px 0
-             cursor: pointer
-             -webkit-transition: all 0.3s ease
-             -moz-transition: all 0.3s ease
-             -ms-transition: all 0.3s ease
-             -o-transition: all 0.3s ease
-             transition: all 0.3s ease
-             &:hover
-               background-color: #e80093
+
+.create-new
+  ul
+    margin: 0
+    padding: 0
+    li
+      width: 240px
+      height: 200px
+      list-style-type: none
+      padding: 0
+      margin: 0 30px 30px 0
+      display: block
+      float: left
+      background-color: #fff
+      -webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,0.2)
+      box-shadow: 0 0 9px 0 rgba(0,0,0,0.2)
+      -webkit-transition: all 0.3s ease
+      -moz-transition: all 0.3s ease
+      -ms-transition: all 0.3s ease
+      -o-transition: all 0.3s ease
+      transition: all 0.3s ease
+      &:hover
+        transform: translateY(-10px)
+      a
+        width: 100%
+        height: 100%
+        display: block
+        text-decoration: none
+        .inner-container
+          padding: 25px
+          text-align: center
+          >*
+            display: block
+            width: 100%
+          .icon
+            transform: translateY(0)
+            height: 120px
+            margin-bottom: 20px
+          span
+            color: #333
 
 .icon
   background-position: center
   background-repeat: no-repeat
   background-size: contain
   display: inline-block
-  transform: translateY(25%)
 
 .icon.small
   width: 40px
@@ -207,3 +222,268 @@ img
 
 .icon.preferences
   background-image: url('/images/cogwheel-outline.png')
+
+.icon.add
+  background-image: url('/images/add.png')
+
+
+// ------------------------------ //
+//                                //
+//             WiZaRd             //
+//                                //
+// ------------------------------ //
+
+.clearfix
+  *zoom: 1
+  &:before
+    display: table
+    content: ""
+    line-height: 0
+  &:after
+    display: table
+    content: ""
+    line-height: 0
+    clear: both
+
+.wizard, .tabcontrol
+  display: block
+  width: 100%
+  overflow: hidden
+
+.wizard a, .tabcontrol a
+  outline: 0
+
+.wizard ul, .tabcontrol ul
+  list-style: none !important
+  padding: 0
+  margin: 0
+
+.wizard ul > li, .tabcontrol ul > li
+  display: block
+  padding: 0
+
+.wizard > .steps .current-info, .tabcontrol > .steps .current-info, .wizard > .content > .title, .tabcontrol > .content > .title
+  position: absolute
+  left: -999em
+
+.wizard
+  > .steps
+    position: relative
+    display: block
+    width: 100%
+  &.vertical
+    > .steps
+      display: inline
+      float: left
+      width: 30%
+    > .steps > ul > li
+      float: none
+      width: 100%
+    > .content
+      display: inline
+      float: left
+      margin: 0 2.5% .5em 2.5%
+      width: 65%
+    > .actions
+      display: inline
+      float: right
+      margin: 0 2.5%
+      width: 95%
+    > .actions > ul > li
+      margin: 0 0 0 1em
+  >
+    .steps
+      .number
+        font-size: 1.429em
+      > ul > li
+        width: 25%
+        float: left
+    .actions > ul > li
+      float: left
+  >
+    .steps
+      a
+        display: block
+        width: auto
+        margin: 0 .5em .5em
+        padding: 1em 1em
+        text-decoration: none
+        -webkit-border-radius: 5px
+        -moz-border-radius: 5px
+        border-radius: 5px
+        &:hover, &:active
+          display: block
+          width: auto
+          margin: 0 .5em .5em
+          padding: 1em 1em
+          text-decoration: none
+          -webkit-border-radius: 5px
+          -moz-border-radius: 5px
+          border-radius: 5px
+      .disabled a
+        background: #eee
+        color: #aaa
+        cursor: default
+        &:hover, &:active
+          background: #eee
+          color: #aaa
+          cursor: default
+      .current a
+        background: #2184be
+        color: #fff
+        cursor: default
+        &:hover, &:active
+          background: #2184be
+          color: #fff
+          cursor: default
+      .done a
+        background: #9dc8e2
+        color: #fff
+        &:hover, &:active
+          background: #9dc8e2
+          color: #fff
+      .error a
+        background: #ff3111
+        color: #fff
+        &:hover, &:active
+          background: #ff3111
+          color: #fff
+    .content
+      background: #eee
+      display: block
+      margin: .5em
+      min-height: 35em
+      overflow: hidden
+      position: relative
+      width: auto
+      -webkit-border-radius: 5px
+      -moz-border-radius: 5px
+      border-radius: 5px
+  >
+    .content > .body
+      float: left
+      position: absolute
+      width: 95%
+      height: 95%
+      padding: 2.5%
+      ul
+        list-style: disc !important
+        > li
+          display: list-item
+      > iframe
+        border: 0 none
+        width: 100%
+        height: 100%
+      input
+        display: block
+        border: 1px solid #ccc
+        &[type="checkbox"]
+          display: inline-block
+        &.error
+          background: #fbe3e4
+          border: 1px solid #fbc2c4
+          color: #8a1f11
+      label
+        display: inline-block
+        margin-bottom: .5em
+        &.error
+          color: #8a1f11
+          display: inline-block
+          margin-left: 1.5em
+    .actions
+      position: relative
+      display: block
+      text-align: right
+      width: 100%
+  > .actions > ul
+    display: inline-block
+    text-align: right
+    > li
+      margin: 0 .5em
+  >
+    .actions
+      a
+        background: #2184be
+        color: #fff
+        display: block
+        padding: .5em 1em
+        text-decoration: none
+        -webkit-border-radius: 5px
+        -moz-border-radius: 5px
+        border-radius: 5px
+        &:hover, &:active
+          background: #2184be
+          color: #fff
+          display: block
+          padding: .5em 1em
+          text-decoration: none
+          -webkit-border-radius: 5px
+          -moz-border-radius: 5px
+          border-radius: 5px
+      .disabled a
+        background: #eee
+        color: #aaa
+        &:hover, &:active
+          background: #eee
+          color: #aaa
+    .loading .spinner
+
+.tabcontrol >
+  .steps
+    position: relative
+    display: block
+    width: 100%
+    > ul
+      position: relative
+      margin: 6px 0 0 0
+      top: 1px
+      z-index: 1
+      > li
+        float: left
+        margin: 5px 2px 0 0
+        padding: 1px
+        -webkit-border-top-left-radius: 5px
+        -webkit-border-top-right-radius: 5px
+        -moz-border-radius-topleft: 5px
+        -moz-border-radius-topright: 5px
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        &:hover
+          background: #edecec
+          border: 1px solid #bbb
+          padding: 0
+        &.current
+          background: #fff
+          border: 1px solid #bbb
+          border-bottom: 0 none
+          padding: 0 0 1px 0
+          margin-top: 0
+          > a
+            padding: 15px 30px 10px 30px
+        > a
+          color: #5f5f5f
+          display: inline-block
+          border: 0 none
+          margin: 0
+          padding: 10px 30px
+          text-decoration: none
+          &:hover
+            text-decoration: none
+  .content
+    position: relative
+    display: inline-block
+    width: 100%
+    height: 35em
+    overflow: hidden
+    border-top: 1px solid #bbb
+    padding-top: 20px
+    > .body
+      float: left
+      position: absolute
+      width: 95%
+      height: 95%
+      padding: 2.5%
+      ul
+        list-style: disc !important
+        > li
+          display: list-item
