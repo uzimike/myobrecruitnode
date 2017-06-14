@@ -303,33 +303,45 @@ img
     .steps
       a
         display: block
-        width: auto
+        width: 70%
         text-decoration: none
+        text-align: center
+        font-size: 13px
+        &::before
+          display: block
+          content: ""
+          width: 100%
+          height: 7px
+          margin-bottom: 5px
       .disabled a
         // background: #eee
         color: #aaa
-        font-size: 13px
         cursor: default
         text-align: center
         &:hover, &:active
           // background: #eee
           // color: #aaa
           cursor: default
+        &::before
+          background-color: #aaa
       .current a
         // background: #2184be
         color: #333
         cursor: default
-        text-align: center
         &:hover, &:active
           // background: #2184be
           // color: #fff
           cursor: default
+        &::before
+          background-color: #78019d
       .done a
         // background: #9dc8e2
         color: #aaa
         &:hover, &:active
           // background: #9dc8e2
           // color: #fff
+        &::before
+          background-color: #9281b5
       .error a
         // background: #ff3111
         color: #fff
@@ -361,19 +373,27 @@ img
         border: 0 none
         width: 100%
         height: 100%
-      input
+      input, textarea, select
         display: block
         border-top: none
         border-left: none
         border-right: none
         border-bottom: 2px solid #78019d
         background: none
+        font-size: 23px
+        font-family: 'Montserrat', sans-serif
+        padding: 0 5px
+        color: #333
         &[type="checkbox"]
           display: inline-block
         &.error
           // background: #fbe3e4
           // border: 1px solid #fbc2c4
           color: #8a1f11
+          option
+            font-size: 20px
+      textarea
+        resize: none
       label
         display: inline-block
         margin-bottom: .5em

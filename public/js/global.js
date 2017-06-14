@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-  
+
 
   if (atPage('recruit')) {
     var form = $("#example-form");
@@ -28,7 +28,7 @@ $( document ).ready(function() {
         },
         onFinished: function (event, currentIndex)
         {
-            alert("Submitted!");
+            alert("go fuck urself!");
         }
     });
   }

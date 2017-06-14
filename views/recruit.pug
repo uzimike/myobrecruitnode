@@ -2,12 +2,14 @@ extends layout
 
 block content
   h1 #{title}
-  h2 #{subtitle}
+  h2 
+    .icon.small.add 
+    span #{subtitle}
   form#example-form(action='#')
     div
       h3 Plan Name
       section
-        input#rp-title(type='text', placeholder='recruitment plan title')
+        input#rp-title(type='text', placeholder='recruitment plan name')
         span To save some stress, please have the following information ready.
         ul
           li Job Position
@@ -24,6 +26,7 @@ block content
       section
         select#employment-type
           option(value='employment type') employment type
+        span $
         input#per-hour-payment(type='text')
         span per hour, 
         select#payment-period
@@ -36,7 +39,7 @@ block content
       section    
       h3 Test Form
       section
-      h3 Review, Confirm and Launch
+      h3 Confirmation
       section
         label.recruitment-plan
         br

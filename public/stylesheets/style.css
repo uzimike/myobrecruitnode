@@ -288,26 +288,38 @@ img {
 
 .wizard > .steps a {
   display: block;
-  width: auto;
-  text-decoration: none; }
+  width: 70%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 13px; }
+  .wizard > .steps a::before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 7px;
+    margin-bottom: 5px; }
 
 .wizard > .steps .disabled a {
   color: #aaa;
-  font-size: 13px;
   cursor: default;
   text-align: center; }
   .wizard > .steps .disabled a:hover, .wizard > .steps .disabled a:active {
     cursor: default; }
+  .wizard > .steps .disabled a::before {
+    background-color: #aaa; }
 
 .wizard > .steps .current a {
   color: #333;
-  cursor: default;
-  text-align: center; }
+  cursor: default; }
   .wizard > .steps .current a:hover, .wizard > .steps .current a:active {
     cursor: default; }
+  .wizard > .steps .current a::before {
+    background-color: #78019d; }
 
 .wizard > .steps .done a {
   color: #aaa; }
+  .wizard > .steps .done a::before {
+    background-color: #9281b5; }
 
 .wizard > .steps .error a {
   color: #fff; }
@@ -337,17 +349,25 @@ img {
     border: 0 none;
     width: 100%;
     height: 100%; }
-  .wizard > .content > .body input {
+  .wizard > .content > .body input, .wizard > .content > .body textarea, .wizard > .content > .body select {
     display: block;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: 2px solid #78019d;
-    background: none; }
-    .wizard > .content > .body input[type="checkbox"] {
+    background: none;
+    font-size: 23px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 5px;
+    color: #333; }
+    .wizard > .content > .body input[type="checkbox"], .wizard > .content > .body textarea[type="checkbox"], .wizard > .content > .body select[type="checkbox"] {
       display: inline-block; }
-    .wizard > .content > .body input.error {
+    .wizard > .content > .body input.error, .wizard > .content > .body textarea.error, .wizard > .content > .body select.error {
       color: #8a1f11; }
+      .wizard > .content > .body input.error option, .wizard > .content > .body textarea.error option, .wizard > .content > .body select.error option {
+        font-size: 20px; }
+  .wizard > .content > .body textarea {
+    resize: none; }
   .wizard > .content > .body label {
     display: inline-block;
     margin-bottom: .5em; }
