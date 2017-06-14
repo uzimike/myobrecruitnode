@@ -1,7 +1,8 @@
 $( document ).ready(function() {
 
-  if (atPage('recruit')) {
+  
 
+  if (atPage('recruit')) {
     var form = $("#example-form");
     form.validate({
         errorPlacement: function errorPlacement(error, element) { element.before(error); },
@@ -30,7 +31,6 @@ $( document ).ready(function() {
             alert("Submitted!");
         }
     });
-
   }
 
 

@@ -263,8 +263,7 @@ img
   padding: 0
 
 .wizard > .steps .current-info, .tabcontrol > .steps .current-info, .wizard > .content > .title, .tabcontrol > .content > .title
-  position: absolute
-  left: -999em
+  display: none
 
 .wizard
   > .steps
@@ -294,9 +293,9 @@ img
   >
     .steps
       .number
-        font-size: 1.429em
+        display: none
       > ul > li
-        width: 25%
+        width: 16.666%
         float: left
     .actions > ul > li
       float: left
@@ -305,54 +304,42 @@ img
       a
         display: block
         width: auto
-        margin: 0 .5em .5em
-        padding: 1em 1em
         text-decoration: none
-        -webkit-border-radius: 5px
-        -moz-border-radius: 5px
-        border-radius: 5px
-        &:hover, &:active
-          display: block
-          width: auto
-          margin: 0 .5em .5em
-          padding: 1em 1em
-          text-decoration: none
-          -webkit-border-radius: 5px
-          -moz-border-radius: 5px
-          border-radius: 5px
       .disabled a
-        background: #eee
+        // background: #eee
         color: #aaa
+        font-size: 13px
         cursor: default
+        text-align: center
         &:hover, &:active
-          background: #eee
-          color: #aaa
+          // background: #eee
+          // color: #aaa
           cursor: default
       .current a
-        background: #2184be
-        color: #fff
+        // background: #2184be
+        color: #333
         cursor: default
+        text-align: center
         &:hover, &:active
-          background: #2184be
-          color: #fff
+          // background: #2184be
+          // color: #fff
           cursor: default
       .done a
-        background: #9dc8e2
-        color: #fff
+        // background: #9dc8e2
+        color: #aaa
         &:hover, &:active
-          background: #9dc8e2
-          color: #fff
+          // background: #9dc8e2
+          // color: #fff
       .error a
-        background: #ff3111
+        // background: #ff3111
         color: #fff
         &:hover, &:active
-          background: #ff3111
-          color: #fff
+          // background: #ff3111
+          // color: #fff
     .content
-      background: #eee
       display: block
       margin: .5em
-      min-height: 35em
+      min-height: 300px
       overflow: hidden
       position: relative
       width: auto
@@ -376,18 +363,22 @@ img
         height: 100%
       input
         display: block
-        border: 1px solid #ccc
+        border-top: none
+        border-left: none
+        border-right: none
+        border-bottom: 2px solid #78019d
+        background: none
         &[type="checkbox"]
           display: inline-block
         &.error
-          background: #fbe3e4
-          border: 1px solid #fbc2c4
+          // background: #fbe3e4
+          // border: 1px solid #fbc2c4
           color: #8a1f11
       label
         display: inline-block
         margin-bottom: .5em
         &.error
-          color: #8a1f11
+          // color: #8a1f11
           display: inline-block
           margin-left: 1.5em
     .actions
@@ -396,36 +387,37 @@ img
       text-align: right
       width: 100%
   > .actions > ul
+    width: 100%
     display: inline-block
     text-align: right
-    > li
+    li
       margin: 0 .5em
+      -webkit-transition: all 0.3s ease
+      -moz-transition: all 0.3s ease
+      -ms-transition: all 0.3s ease
+      -o-transition: all 0.3s ease
+      transition: all 0.3s ease
+    li:not(:first-child)
+      float: right
+    li[aria-disabled='true']
+      opacity: 0
+      pointer-events: none
   >
     .actions
       a
-        background: #2184be
+        background: #78019d
         color: #fff
         display: block
-        padding: .5em 1em
+        padding: 1em 1.5em
         text-decoration: none
-        -webkit-border-radius: 5px
-        -moz-border-radius: 5px
-        border-radius: 5px
-        &:hover, &:active
-          background: #2184be
-          color: #fff
-          display: block
-          padding: .5em 1em
-          text-decoration: none
-          -webkit-border-radius: 5px
-          -moz-border-radius: 5px
-          border-radius: 5px
+        width: 80px
+        text-align: center
       .disabled a
-        background: #eee
-        color: #aaa
+        // background: #eee
+        // color: #aaa
         &:hover, &:active
-          background: #eee
-          color: #aaa
+          // background: #eee
+          // color: #aaa
     .loading .spinner
 
 .tabcontrol >
