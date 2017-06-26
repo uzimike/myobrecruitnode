@@ -5,11 +5,12 @@ block content
   h2 
     .icon.small.add 
     span #{subtitle}
-  form#example-form(action='#')
+  form#recruitment-plan-form(action='#', data-persist="garlic")
     div
       h3 Plan Name
       section
-        input#rp-title.required(name='rp-title', type='text', placeholder='recruitment plan name')
+        input#rp-title.required(name='rp-title', type='text')
+          //- , placeholder='recruitment plan name'
         p To save some stress, please have the following information ready.
         ul
           li Job Position
@@ -29,13 +30,13 @@ block content
           option(name='employment-type', value='employment type') employment type
         br
         span $
-        input#per-hour-payment.required(name='per-hour-payment', type='text')
-        span per hour,
+        input#per-hour-payment.required.small(name='per-hour-payment', type='text')
+        span  per hour,
         select#payment-period.required
           option(name='payment-period', value='fortnightly') fortnightly
         br
-        input#hours.required(name='hours', type='text')
-        span hours per
+        input#hours.required.small(name='hours', type='text')
+        span  hours per
         select#hours-period.required
           option(name='hours-period', value='week') week
       h3 Application Form
@@ -43,13 +44,22 @@ block content
       h3 Test Form
       section
       h3 Confirmation
-      section
-        label.recruitment-plan
+      section.confirm
+        p These are your final details! Please check them over before you complete your recruitment plan.
+        label.recruitment-plan-title.confirm-title Recruitment Plan
         br
-        label.job-title
+        label.recruitment-plan.confirm-input Recruitment Plan
         br
-        label.job-desc
+        label.job-title-title.confirm-title Job Title
         br
-        label.employment-type
+        label.job-title.confirm-input Job Title
+        br
+        label.job-desc-title.confirm-title Job Description
+        br
+        label.job-desc.confirm-input Job Description
+        br
+        label.employment-type-title.confirm-title Employment
+        br
+        label.employment-type.confirm-input Employment
         br
         label

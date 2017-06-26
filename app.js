@@ -8,12 +8,15 @@ var sassMiddleware = require('node-sass-middleware');
 
 var index = require('./routes/index');
 var recruit = require('./routes/recruit');
+var submissions = require('./routes/submissions');
 var employees = require('./routes/employees');
 var contracts = require('./routes/contracts');
+var newcontract = require('./routes/newcontract');
 var applications = require('./routes/applications');
+var newapplication = require('./routes/newapplication');
 var tests = require('./routes/tests');
+var newtest = require('./routes/newtest');
 var preferences = require('./routes/preferences');
-var submissions = require('./routes/recruit/plan/submissions');
 
 var app = express();
 
@@ -37,12 +40,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/recruit', recruit);
+app.use('/submissions', submissions);
 app.use('/employees', employees);
 app.use('/contracts', contracts);
+app.use('/newcontract', newcontract);
 app.use('/applications', applications);
+app.use('/applications/new', newapplication);
 app.use('/tests', tests);
+app.use('/tests/new', newtest);
 app.use('/preferences', preferences);
-app.use('/recruit/plan/submissions', submissions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
