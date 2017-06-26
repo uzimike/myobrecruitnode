@@ -40,9 +40,19 @@ block content
         select#hours-period.required
           option(name='hours-period', value='week') week
       h3 Application Form
-      section    
+      section
+        div.new-form
+          a(href='/applications')
+            .inner-container  
+              .icon.medium.application
+              span New Application Form
       h3 Test Form
       section
+        div.new-form
+          a(href='/test')
+            .inner-container  
+              .icon.medium.test
+              span New Test Form
       h3 Confirmation
       section.confirm
         p These are your final details! Please check them over before you complete your recruitment plan.
