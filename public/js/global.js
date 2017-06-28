@@ -1,7 +1,6 @@
 $( document ).ready(function() {
 
-  if (atPage('recruit')) {
-
+  if (atPage('recruit/new')) {
     var form = $("#recruitment-plan-form");
     form.validate({
         errorPlacement: function errorPlacement(error, element) { element.before(error); },
@@ -28,13 +27,10 @@ $( document ).ready(function() {
         },
         onFinished: function (event, currentIndex) {
           // form.resetForm();
-          window.location.replace('/submissions');
+          window.location.replace('/recruit/my-recruitment-plan');
         }
     });
-
-
-
-  }
+  }// endif atpage(recruit/new)
 
   function atPage(path) {
     return window.location.pathname == '/' + path;

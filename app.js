@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 
 var index = require('./routes/index');
+var newrecruit = require('./routes/newrecruit');
 var recruit = require('./routes/recruit');
 var submissions = require('./routes/submissions');
 var employees = require('./routes/employees');
@@ -40,7 +41,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/recruit', recruit);
-app.use('/submissions', submissions);
+app.use('/recruit/new', newrecruit);
+app.use('/recruit/my-recruitment-plan', submissions);
 app.use('/employees', employees);
 app.use('/contracts', contracts);
 app.use('/newcontract', newcontract);

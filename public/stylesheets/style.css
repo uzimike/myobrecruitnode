@@ -53,7 +53,7 @@ img {
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5); }
 
 #menu {
-  width: 300px;
+  width: 320px;
   -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
   z-index: 100;
@@ -78,14 +78,14 @@ img {
 
 #content {
   float: left;
-  left: 300px;
+  left: 320px;
   overflow: hidden;
-  width: -webkit-calc(100% - 300px);
-  width: -moz-calc(100% - 300px);
-  width: calc(100% - 300px);
-  max-width: -webkit-calc(1500px - 300px);
-  max-width: -moz-calc(1500px - 300px);
-  max-width: calc(1500px - 300px); }
+  width: -webkit-calc(100% - 320px);
+  width: -moz-calc(100% - 320px);
+  width: calc(100% - 320px);
+  max-width: -webkit-calc(1500px - 320px);
+  max-width: -moz-calc(1500px - 320px);
+  max-width: calc(1500px - 320px); }
 
 .inner-container.content {
   padding: 50px 60px; }
@@ -337,7 +337,7 @@ div.new-form {
     background-color: #9281b5; }
 
 .wizard > .steps .error a {
-  color: #fff; }
+  color: #333; }
 
 .wizard > .content {
   display: block;
@@ -345,10 +345,7 @@ div.new-form {
   min-height: 400px;
   overflow: hidden;
   position: relative;
-  width: auto;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px; }
+  width: auto; }
 
 .wizard > .content > .body {
   float: left;
