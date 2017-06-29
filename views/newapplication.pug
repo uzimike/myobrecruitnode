@@ -6,21 +6,48 @@ block content
   h2 
     .icon.small.add 
     span #{subtitle}
-  .building-container
-    .side-boxes
+  .whole-form-building-container
+    
+    .side-boxes.wfb-child
       .drag-box.from.fields
-        h3 Fields
-      .drag-box.from.options
-        h3 Options
-    .form-building-container
-      
-      mixin fieldbox(name, type)
-        .field
-          a.expand ▼
-          span.name= name
-          span.type= type
+        .inner-container    
+          h3 Fields
           
-      +fieldbox('Name', 'Text')
-      +fieldbox('Do you have a drivers license?', 'Checkbox')
-      +fieldbox('What is your current occupation?', 'Checkbox')
-      
+          mixin dragfieldbox(name)
+            .field.drag
+              a
+                span.name= name
+              
+          +dragfieldbox('Text')
+          +dragfieldbox('Checkbox')
+          +dragfieldbox('List')
+        
+      .drag-box.from.options
+        .inner-container
+          h3 Options
+          .option
+              span Time Limit
+              .input
+                input(placeholder="0:00")
+              
+    .form-building-container.wfb-child
+      form.form-build.application
+        .inner-container
+          
+          input(type="text", placeholder="applciation title").title
+          
+          .fields
+                    
+            mixin fieldbox(name, type)
+              .field
+                a
+                  span.expand ▼
+                  span.name= name
+                  span.type= type
+                
+            +fieldbox('Name', 'Text')
+            +fieldbox('Do you have a drivers license?', 'Checkbox')
+            +fieldbox('What is your current occupation?', 'Text')
+            
+          button(name="Cancel")
+          input(type="submit")
