@@ -29,25 +29,24 @@ block content
               span Time Limit
               .input
                 input(placeholder="0:00")
-              
+          .option
+              span Require CV
+              .input
+                input(type="checkbox")
+
     .form-building-container.wfb-child
-      form.form-build.application
-        .inner-container
+      .inner-container
+        .inner-inner-container
+            input(type="text", placeholder="applciation title").title
+            .fields
+              mixin fieldbox(name, type)
+                .field
+                  a
+                    span.expand ▼
+                    span.name= name
+                    span.type= type
+              +fieldbox('Name', 'Text')
+              +fieldbox('Do you have a drivers license?', 'Checkbox')
+              +fieldbox('What is your current occupation?', 'Text')
           
-          input(type="text", placeholder="applciation title").title
-          
-          .fields
-                    
-            mixin fieldbox(name, type)
-              .field
-                a
-                  span.expand ▼
-                  span.name= name
-                  span.type= type
-                
-            +fieldbox('Name', 'Text')
-            +fieldbox('Do you have a drivers license?', 'Checkbox')
-            +fieldbox('What is your current occupation?', 'Text')
-            
-          button(name="Cancel")
-          input(type="submit")
+    include newobjectbuttonset

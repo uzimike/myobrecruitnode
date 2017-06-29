@@ -31,11 +31,18 @@ $( document ).ready(function() {
         }
     });
   }// endif atpage(recruit/new)
+  else if (atPage('applications/new')) {
+    $('.submit').click(goBack);
+  }
 
   function atPage(path) {
     return window.location.pathname == '/' + path;
   }
 
+  function goBack() {
+    event.preventDefault();
+    history.go(-1);
+  }
 
   function upDateFromInput(input, label) {
     label.text(input.val());

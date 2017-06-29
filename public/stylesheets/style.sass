@@ -219,37 +219,74 @@ div.new-form
     width: 70%
     .inner-container
       padding: 0 30px
-      .title
-        width: 80%
-        display: inline-block
-        font-weight: 300
-        border-top: none
-        border-left: none
-        border-right: none
-        border-bottom: 2px solid #78019d
-        background: none
-        font-size: 30px
-        font-family: 'Montserrat', sans-serif
-        padding: 3px 5px
-        color: #333
-        margin-bottom: 20px
-      .field
-        background-color: #fff
-        padding: 15px
-        margin-bottom: 20px
-        -webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,0.2)
-        box-shadow: 0 0 8px 0 rgba(0,0,0,0.2)
-        .expand
-          font-size: 30px
+      position: relative
+      .inner-inner-container
+        padding: 25px 30px
+        border: 0.5px solid rgba(0, 0, 0, 0.2)
+        border-radius: 4px
+        background-color: rgba(255, 255, 255, 0.24)
+        .title
+          width: 80%
           display: inline-block
-          line-height: 0px
-          position: relative
-          top: 3px
-          margin-right: 15px
-        .type
-          float: right
-          font-size: 13px
-          color: #9b9b9b
+          font-weight: 300
+          border-top: none
+          border-left: none
+          border-right: none
+          border-bottom: 2px solid #78019d
+          background: none
+          font-size: 30px
+          font-family: 'Montserrat', sans-serif
+          padding: 3px 5px
+          color: #333
+          margin-bottom: 20px
+        .fields
+          min-height: 300px
+          margin-bottom: 40px
+          .field
+            background-color: #fff
+            padding: 15px
+            margin-bottom: 20px
+            -webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,0.2)
+            box-shadow: 0 0 8px 0 rgba(0,0,0,0.2)
+            .expand
+              font-size: 30px
+              display: inline-block
+              line-height: 0px
+              position: relative
+              top: 3px
+              margin-right: 15px
+            .type
+              float: right
+              font-size: 13px
+              color: #9b9b9b
+
+.newobjectbuttonset
+  width: 100%
+  clear: both
+  input[type="submit"], button
+    font-family: 'Montserrat', sans-serif
+    font-size: 16px
+    background: #78019d
+    color: #fff
+    display: inline-block
+    padding: 1em 1.5em
+    text-decoration: none
+    min-width: 128px
+    text-align: center
+    border: none
+    cursor: pointer
+    text-transform: lowercase
+    -webkit-transition: all 0.3s ease
+    -moz-transition: all 0.3s ease
+    -ms-transition: all 0.3s ease
+    -o-transition: all 0.3s ease
+    transition: all 0.3s ease
+    &:hover
+      background-color: #c50485
+    &.submit
+      float: right
+    &.canncel
+      float: left
 
 .icon
   background-position: center
@@ -294,11 +331,11 @@ div.new-form
   background-image: url('/images/add.png')
 
 
-// ------------------------------ //
-//                                //
-//             WiZaRd             //
-//                                //
-// ------------------------------ //
+// ------------------------------------------------------------ //
+//                                                              //
+//                            WiZaRd                            //
+//                                                              //
+// ------------------------------------------------------------ //
 
 .clearfix
   *zoom: 1
@@ -447,7 +484,7 @@ div.new-form
         height: 100%
       p
         margin-top: 0
-        max-width: 700px
+        max-width: 800px
       input, textarea, select
         display: inline-block
         font-weight: 300
@@ -531,12 +568,16 @@ div.new-form
         text-decoration: none
         width: 80px
         text-align: center
+        text-transform: lowercase
+        -webkit-transition: all 0.3s ease
+        -moz-transition: all 0.3s ease
+        -ms-transition: all 0.3s ease
+        -o-transition: all 0.3s ease
+        transition: all 0.3s ease
+        &:hover
+          background-color: #c50485
       .disabled a
-        // background: #eee
-        // color: #aaa
         &:hover, &:active
-          // background: #eee
-          // color: #aaa
     .loading .spinner
 
 .tabcontrol >
