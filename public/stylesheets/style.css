@@ -27,6 +27,9 @@ h2 .icon.small {
   margin-right: 5px;
   transform: translateY(7px); }
 
+h4 {
+  font-weight: 400; }
+
 img {
   max-width: 100%;
   height: auto; }
@@ -448,6 +451,8 @@ div.new-form {
   height: 97%;
   padding: 3% 0 0 0;
   font-size: 20px !important; }
+  .wizard > .content > .body h4 {
+    text-align: center; }
   .wizard > .content > .body ul {
     list-style: disc !important;
     text-indent: -20px;
