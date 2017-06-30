@@ -140,11 +140,11 @@ img {
         #side-nav ul li a .inner-container span {
           padding: 0 15px 0 25px; }
 
-.create-new ul {
+.create-new ul, .edit-obj ul {
   margin: 0;
   padding: 0; }
 
-.create-new ul li, div.new-form {
+.create-new ul li, .edit-obj ul li, div.new-form {
   width: 240px;
   min-height: 200px;
   list-style-type: none;
@@ -160,24 +160,24 @@ img {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
-  .create-new ul li:hover, div.new-form:hover {
+  .create-new ul li:hover, .edit-obj ul li:hover, div.new-form:hover {
     transform: translateY(-10px); }
-  .create-new ul li a, div.new-form a {
+  .create-new ul li a, .edit-obj ul li a, div.new-form a {
     width: 100%;
     height: 100%;
     display: block;
     text-decoration: none; }
-    .create-new ul li a .inner-container, div.new-form a .inner-container {
+    .create-new ul li a .inner-container, .edit-obj ul li a .inner-container, div.new-form a .inner-container {
       padding: 25px;
       text-align: center; }
-      .create-new ul li a .inner-container > *, div.new-form a .inner-container > * {
+      .create-new ul li a .inner-container > *, .edit-obj ul li a .inner-container > *, div.new-form a .inner-container > * {
         display: block;
         width: 100%; }
-      .create-new ul li a .inner-container .icon, div.new-form a .inner-container .icon {
+      .create-new ul li a .inner-container .icon, .edit-obj ul li a .inner-container .icon, div.new-form a .inner-container .icon {
         transform: translateY(0);
         height: 120px;
         margin-bottom: 20px; }
-      .create-new ul li a .inner-container span, div.new-form a .inner-container span {
+      .create-new ul li a .inner-container span, .edit-obj ul li a .inner-container span, div.new-form a .inner-container span {
         color: #333; }
 
 div.new-form {
@@ -281,6 +281,19 @@ div.new-form {
       float: right; }
     .newobjectbuttonset input[type="submit"].canncel, .newobjectbuttonset button.canncel {
       float: left; }
+
+table {
+  width: 100%; }
+  table th, table td {
+    text-align: left;
+    font-size: 19px; }
+  table th {
+    font-weight: 500;
+    padding: 10px 5px; }
+  table td {
+    padding: 5px; }
+  table .hidden {
+    opacity: 0; }
 
 .icon {
   background-position: center;

@@ -1,6 +1,55 @@
 extends layout
 
 block content
-  h1= title
-  
-  
+  h1 Recruiting
+  h2= title
+
+  .edit-obj
+    ul
+      li
+        a(href='/tests/new')
+          .inner-container
+            .icon.small.application
+            span Application Form
+    ul
+      li  
+        a(href='/tests/new')
+          .inner-container
+            .icon.small.test
+            span Test Form
+    ul
+      li
+        a(href='/tests/new')
+          .inner-container
+            .icon.small.contract
+            span Contract
+    
+    .clearfix
+      
+    h3 Applicants
+    
+    mixin tablerow(name, email, phone, testscore)
+      tr
+        td.checkbox 
+          input(type="checkbox")
+        td.name= name
+        td.email= email
+        td.phone= phone
+        td.testscore.hidden= testscore
+    
+    table.applicants
+      tr
+        th.checkbox
+        th.name Name
+        th.email Email
+        th.phone Phone
+        th.testscore.hidden Test Score        
+      +tablerow("Kieth Smith", "ks26@zmail.com", "234 83479", "34%")
+      +tablerow("John Reese", "johnreese@zmail.com", "920 409 324", "74%")
+      +tablerow("Mary Applefield", "ma0192@zmail.com", "234 3456", "91%")
+      +tablerow("Ron Stzergsat", "ron5tz@zmail.com", "948 23 553", "NOT YET SUBMITTED")
+      +tablerow("Darsey Hammond", "darsham@zmail.com", "9438 523 094", "50%")
+      +tablerow("Jane Carter", "janecar@zmail.com", "234 5333", "NOT YET SUBMITTED")
+      +tablerow("Penelope Perry", "pp66@zmail.com", "403 2339", "83%")
+      
+      
