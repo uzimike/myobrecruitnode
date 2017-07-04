@@ -269,6 +269,25 @@ div.new-form {
       text-align: right;
       background: none; }
 
+.vex.vex-theme-os .vex-dialog-button.vex-dialog-button-primary {
+  background-color: #78019d !important; }
+
+.vex.vex-theme-os .vex-dialog-form .vex-dialog-input div.clipboard input, .vex.vex-theme-os .vex-dialog-form .vex-dialog-input div.clipboard label {
+  float: left;
+  border: none !important;
+  font-size: 13px; }
+
+.vex.vex-theme-os .vex-dialog-form .vex-dialog-input div.clipboard input {
+  width: 75%;
+  border-radius: 10px 0 0 10px; }
+
+.vex.vex-theme-os .vex-dialog-form .vex-dialog-input div.clipboard label {
+  width: 25%;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+  background-color: green;
+  padding: 3.25px; }
+
 .slidecbcontainer {
   margin-bottom: 10px; }
   .slidecbcontainer span {
@@ -374,6 +393,9 @@ table {
     padding: 15px 5px; }
   table .hidden {
     opacity: 0; }
+
+.vex-dialog-message {
+  font-size: 24px; }
 
 .icon {
   background-position: center;
