@@ -1,4 +1,53 @@
 extends layout
 
 block content
-  h1= title
+      
+  h1 #{title}
+  h2 
+    .icon.small.add 
+    span #{subtitle}
+  .whole-form-building-container
+    
+    .side-boxes.wfb-child
+      .drag-box.from.fields
+        .inner-container    
+          h3 Fields
+          
+          mixin dragfieldbox(name)
+            .field.drag
+              a
+                span.name= name
+              
+          +dragfieldbox('Text')
+          +dragfieldbox('Checkbox')
+          +dragfieldbox('List')
+        
+      .drag-box.from.options
+        .inner-container
+          h3 Options
+          .slidecbcontainer
+            span Benis
+            .slidecheckbox
+              input#showanswer(type='checkbox', value='None', name='check', checked='')
+              label(for='showanswer')
+          .option
+              span Time Limit
+              .input
+                input(placeholder="0:00")
+
+    .form-building-container.wfb-child
+      .inner-container
+        .inner-inner-container
+            input(type="text", placeholder="test title").title
+            .fields
+              mixin fieldbox(name, type)
+                .field
+                  a
+                    span.expand ▼
+                    span.name= name
+                    span.type= type
+              +fieldbox('Name', 'Text')
+              +fieldbox('Do you have a drivers license?', 'Checkbox')
+              +fieldbox('What is your current occupation?', 'Text')
+          
+    include newobjectbuttonset

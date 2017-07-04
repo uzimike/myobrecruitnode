@@ -19,6 +19,8 @@ var tests = require('./routes/tests');
 var newtest = require('./routes/newtest');
 var preferences = require('./routes/preferences');
 
+var applicationview = require('./routes/applicationview');
+
 var app = express();
 
 // view engine setup
@@ -51,6 +53,8 @@ app.use('/applications/new', newapplication);
 app.use('/tests', tests);
 app.use('/tests/new', newtest);
 app.use('/preferences', preferences);
+
+app.use('/mikes-business/applications/jenfni39rf39fjmc', applicationview);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

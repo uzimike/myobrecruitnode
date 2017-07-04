@@ -1,5 +1,8 @@
 $( document ).ready(function() {
 
+  //Vex dialog default theme
+  vex.defaultOptions.className = 'vex-theme-os';
+
   if (atPage('recruit/new')) {
     var form = $("#recruitment-plan-form");
     form.validate({
@@ -31,8 +34,18 @@ $( document ).ready(function() {
         }
     });
   }// endif atpage(recruit/new)
-  else if (atPage('applications/new')) {
+  else if (atPage('applications/new') || atPage('tests/new')) {
     $('.submit').click(goBack);
+    $('.cancel').click(goBack);
+  }
+  else if (atPage('recruit/my-recruitment-plan')) {
+    vex.dialog.open({
+      message: 'Recruitment Plan Created',
+    });
+  }
+
+  function sameHeight(sameheightclass) {
+
   }
 
   function atPage(path) {

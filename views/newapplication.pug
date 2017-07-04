@@ -25,19 +25,16 @@ block content
       .drag-box.from.options
         .inner-container
           h3 Options
-          .option
-              span Time Limit
-              .input
-                input(placeholder="0:00")
-          .option
-              span Require CV
-              .input
-                input(type="checkbox")
+          .slidecbcontainer
+            span Require CV
+            .slidecheckbox
+              input#requirecv(type='checkbox', value='None', name='check', checked='')
+              label(for='requirecv')
 
     .form-building-container.wfb-child
       .inner-container
         .inner-inner-container
-            input(type="text", placeholder="applciation title").title
+            input(type="text", placeholder="application title").title
             .fields
               mixin fieldbox(name, type)
                 .field
