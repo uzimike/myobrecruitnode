@@ -1,5 +1,10 @@
 $( document ).ready(function() {
 
+  sameHeight('.same-height-1');
+  $(window).resize(function(){
+    sameHeight('.same-height-1');
+  });
+
   //Vex dialog default theme
   vex.defaultOptions.className = 'vex-theme-os';
 
@@ -40,51 +45,49 @@ $( document ).ready(function() {
   }
   else if (atPage('recruit/my-recruitment-plan')) {
     vex.dialog.open({
-    message: 'Recruitment Plan Created!',
-    input: [
-          '<style>',
-              '.vex-custom-field-wrapper {',
-                  'margin: 1em 0;',
-              '}',
-              '.vex-custom-field-wrapper > label {',
-                  'display: inline-block;',
-                  'margin-bottom: .2em;',
-              '}',
-          '</style>',
-          '<div class="vex-custom-field-wrapper">',
+    unsafeMessage: [
+          '<div class="vex-field-wrapper">',
+              '<h2>Recruitment Plan Created!</h2>',
               '<h3>What do I do now?</h3>',
-              '<p>This link needs to be shared on your desired platforms</p>',
+              '<p>Applicants need to follow this link to fill out the application form</p>',
               '<div class="clipboard">',
-              '<input name="clipboard" type="text" readonly="readonly" value="https://localhost:3443/mikes-business/applications/jenfni39rf39fjmc"/>',
-              '<label for="clipboard">Copy to clipboard</label>',
+                '<input id="clipboardselect" name="clipboard" type="text" readonly="readonly" value="https://localhost:3443/mikes-business/applications/jenfni39rf39fjmc"/>',
+                '<label id="clipboardbutton" for="clipboard">Copy to clipboard</label>',
               '</div>',
-              '<div class="vex-custom-input-wrapper">',
-                  '<input name="date" type="date" value="ass" />',
-              '</div>',
-          '</div>',
-          '<div class="vex-custom-field-wrapper">',
-              '<label for="color">Color</label>',
-              '<div class="vex-custom-input-wrapper">',
-                  '<input name="color" type="color" value="#ff00cc" />',
+              '<p>Share this link on job searching platforms to get applicants to apply!</p>',
+              '<p class="qr-link"><a>Not advertising on the internet?</a></p>',
+              '<div class="qr-container no-height">',
+                '<h3>Download this QR code for applicants to scan!</h3>',
+                '<p>Simply display this QR code on your job advertisement. From there, applicants can scan this code and will be taken to the application form.</p>',
+                '<img src="/images/qr-code.jpg"/>',
               '</div>',
           '</div>'
       ].join(''),
+      buttons: [
+        $.extend({}, vex.dialog.buttons.YES, { text: 'Ok' })
+      ]
+    });
+    $('#clipboardbutton').click(function(){
+      document.querySelector('#clipboardselect').select();
+      document.execCommand('copy');
     });
   }
 
   function sameHeight(sameheightclass) {
     var maxheight = 0;
+    console.log("Okay");
     // find max height
-    sameheightclass.each(function(){
-      currentHeight = this.height();
+    $(sameheightclass).each(function(maxheight){
+      currentHeight = $(this).outerHeight(true);
       if(currentHeight > maxheight) {
+        console.log("Height = " + currentHeight);
         maxheight = currentHeight;
       }
     });
-
     // apply max height
-    sameheightclass.each(function(){
-      this.height(maxheight);
+    $(sameheightclass).each(function(){
+      $(this).outerHeight(maxheight);
+      console.log("Height be CHANGED");
     });
   }
 

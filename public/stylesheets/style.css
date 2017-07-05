@@ -82,7 +82,6 @@ img {
 #content {
   float: left;
   left: 320px;
-  overflow: hidden;
   width: -webkit-calc(100% - 320px);
   width: -moz-calc(100% - 320px);
   width: calc(100% - 320px);
@@ -269,24 +268,51 @@ div.new-form {
       text-align: right;
       background: none; }
 
+.vex.vex-theme-os .vex-dialog-form .vex-dialog-buttons {
+  padding: 0 15px 10px; }
+
+.vex.vex-theme-os .vex-dialog-button {
+  text-transform: lowercase;
+  font-size: 17px; }
+
 .vex.vex-theme-os .vex-dialog-button.vex-dialog-button-primary {
   background-color: #78019d !important; }
 
-.vex.vex-theme-os .vex-dialog-form .vex-dialog-input div.clipboard input, .vex.vex-theme-os .vex-dialog-form .vex-dialog-input div.clipboard label {
-  float: left;
-  border: none !important;
-  font-size: 13px; }
+.vex.vex-theme-os .vex-content {
+  width: 700px; }
 
-.vex.vex-theme-os .vex-dialog-form .vex-dialog-input div.clipboard input {
-  width: 75%;
-  border-radius: 10px 0 0 10px; }
+.vex-field-wrapper {
+  margin: 10px 15px 30px; }
 
-.vex.vex-theme-os .vex-dialog-form .vex-dialog-input div.clipboard label {
-  width: 25%;
-  border-radius: 0 10px 10px 0;
+div.clipboard {
+  width: 100%;
+  display: inline-block; }
+  div.clipboard input, div.clipboard label {
+    float: left;
+    border: none !important;
+    height: 40px;
+    padding: 5px 10px; }
+  div.clipboard input {
+    width: 75%;
+    border-radius: 7px 0 0 7px;
+    font-size: 13px; }
+  div.clipboard label {
+    width: 25%;
+    border-radius: 0 7px 7px 0;
+    text-align: center;
+    background-color: #78019d;
+    color: #fff;
+    line-height: 30px;
+    font-size: 15px;
+    cursor: pointer; }
+
+p.qr-link {
   text-align: center;
-  background-color: green;
-  padding: 3.25px; }
+  font-size: 15px; }
+  p.qr-link a {
+    text-decoration: underline; }
+    p.qr-link a:hover {
+      cursor: pointer; }
 
 .slidecbcontainer {
   margin-bottom: 10px; }
@@ -393,9 +419,6 @@ table {
     padding: 15px 5px; }
   table .hidden {
     opacity: 0; }
-
-.vex-dialog-message {
-  font-size: 24px; }
 
 .icon {
   background-position: center;
