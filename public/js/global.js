@@ -71,6 +71,10 @@ $( document ).ready(function() {
       document.querySelector('#clipboardselect').select();
       document.execCommand('copy');
     });
+    $('#clipboardbutton2').click(function(){
+      document.querySelector('#clipboardselect2').select();
+      document.execCommand('copy');
+    });
   }
 
   function sameHeight(sameheightclass) {

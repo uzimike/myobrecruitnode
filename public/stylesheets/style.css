@@ -187,6 +187,16 @@ div.new-form {
     div.new-form .inner-container span {
       font-size: 14px; }
 
+.edit-obj ul li {
+  width: 160px;
+  min-height: 160px; }
+  .edit-obj ul li a .inner-container {
+    padding: 15px 10px 10px 10px; }
+    .edit-obj ul li a .inner-container .icon.small {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 15px; }
+
 .whole-form-building-container {
   width: 100%; }
   .whole-form-building-container .wfb-child {
@@ -279,7 +289,7 @@ div.new-form {
   background-color: #78019d !important; }
 
 .vex.vex-theme-os .vex-content {
-  width: 700px; }
+  width: 800px; }
 
 .vex-field-wrapper {
   margin: 10px 15px 30px; }
@@ -291,20 +301,28 @@ div.clipboard {
     float: left;
     border: none !important;
     height: 40px;
-    padding: 5px 10px; }
+    padding: 5px 0.5%;
+    text-align: center; }
   div.clipboard input {
-    width: 75%;
+    width: 74% !important;
     border-radius: 7px 0 0 7px;
     font-size: 13px; }
   div.clipboard label {
-    width: 25%;
+    width: 24% !important;
     border-radius: 0 7px 7px 0;
-    text-align: center;
     background-color: #78019d;
     color: #fff;
     line-height: 30px;
     font-size: 15px;
     cursor: pointer; }
+
+.content.inner-container > div.clipboard {
+  width: 80%;
+  margin-bottom: 20px; }
+  .content.inner-container > div.clipboard input {
+    font-size: 17px; }
+  .content.inner-container > div.clipboard label {
+    line-height: 40px; }
 
 p.qr-link {
   text-align: center;
@@ -364,20 +382,29 @@ p.qr-link {
       visibility: hidden; }
       .slidecbcontainer .slidecheckbox input[type=checkbox]:checked + label {
         left: 38px; }
-  .slidecbcontainer ul.table-menu {
-    width: 100%;
-    margin: 30px 0 20px;
-    padding: 0; }
-    .slidecbcontainer ul.table-menu li {
-      list-style-type: none;
-      display: inline-block;
-      margin-right: 30px; }
-      .slidecbcontainer ul.table-menu li .icon {
-        margin-right: 6px; }
-      .slidecbcontainer ul.table-menu li span {
-        font-size: 17px;
-        position: relative;
-        top: -10px; }
+
+ul.table-menu {
+  width: 100%;
+  margin: 30px 0 20px;
+  padding: 0; }
+  ul.table-menu li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    ul.table-menu li:hover {
+      transform: translateY(-6px); }
+    ul.table-menu li .icon {
+      margin-right: 6px; }
+    ul.table-menu li span {
+      font-size: 17px;
+      position: relative;
+      top: -10px; }
 
 .newobjectbuttonset {
   width: 100%;
