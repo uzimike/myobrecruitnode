@@ -75,19 +75,16 @@ $( document ).ready(function() {
 
   function sameHeight(sameheightclass) {
     var maxheight = 0;
-    console.log("Okay");
     // find max height
     $(sameheightclass).each(function(maxheight){
       currentHeight = $(this).outerHeight(true);
       if(currentHeight > maxheight) {
-        console.log("Height = " + currentHeight);
         maxheight = currentHeight;
       }
     });
     // apply max height
     $(sameheightclass).each(function(){
       $(this).outerHeight(maxheight);
-      console.log("Height be CHANGED");
     });
   }
 
