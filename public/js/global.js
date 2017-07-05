@@ -1,9 +1,9 @@
 $( document ).ready(function() {
 
   sameHeight('.same-height-1');
-  $(window).resize(function(){
-    sameHeight('.same-height-1');
-  });
+  // $(window).resize(function(){
+  //   sameHeight('.same-height-1');
+  // });
 
   //Vex dialog default theme
   vex.defaultOptions.className = 'vex-theme-os';
