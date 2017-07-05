@@ -7,16 +7,23 @@ var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 
 var index = require('./routes/index');
-var newrecruit = require('./routes/newrecruit');
+
 var recruit = require('./routes/recruit');
+var newrecruit = require('./routes/newrecruit');
 var submissions = require('./routes/submissions');
+
 var employees = require('./routes/employees');
+var employees = require('./routes/newemployee');
+
 var contracts = require('./routes/contracts');
 var newcontract = require('./routes/newcontract');
+
 var applications = require('./routes/applications');
 var newapplication = require('./routes/newapplication');
+
 var tests = require('./routes/tests');
 var newtest = require('./routes/newtest');
+
 var preferences = require('./routes/preferences');
 
 var applicationview = require('./routes/applicationview');
@@ -42,16 +49,23 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+
 app.use('/recruit', recruit);
 app.use('/recruit/new', newrecruit);
 app.use('/recruit/my-recruitment-plan', submissions);
+
 app.use('/employees', employees);
+app.use('/employees/new', employees);
+
 app.use('/contracts', contracts);
-app.use('/newcontract', newcontract);
+app.use('/contracts/new', newcontract);
+
 app.use('/applications', applications);
 app.use('/applications/new', newapplication);
+
 app.use('/tests', tests);
 app.use('/tests/new', newtest);
+
 app.use('/preferences', preferences);
 
 app.use('/mikes-business/applications/jenfni39rf39fjmc', applicationview);

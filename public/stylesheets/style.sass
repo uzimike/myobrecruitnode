@@ -93,7 +93,6 @@ img
 #content
   float: left
   left: #{$side-width}
-  overflow: hidden
   width: -webkit-calc(100% - #{$side-width})
   width:    -moz-calc(100% - #{$side-width})
   width:         calc(100% - #{$side-width})
@@ -281,23 +280,56 @@ div.new-form
       text-align: right
       background: none
 
+.vex-dialog-message
+  // font-size: 24px
+
+.vex.vex-theme-os .vex-dialog-form .vex-dialog-buttons
+  padding: 0 15px 10px
+
+.vex.vex-theme-os .vex-dialog-button
+  text-transform: lowercase
+  font-size: 17px
+
 .vex.vex-theme-os .vex-dialog-button.vex-dialog-button-primary
   background-color: $purp !important
 
-.vex.vex-theme-os .vex-dialog-form .vex-dialog-input div.clipboard
+.vex.vex-theme-os .vex-content
+  width: 700px
+
+.vex-field-wrapper
+  margin: 10px 15px 30px
+
+div.clipboard
+  width: 100%
+  display: inline-block
   input, label
     float: left
     border: none !important
-    font-size: 13px
+    height: 40px
+    padding: 5px 10px
   input
     width: 75%
-    border-radius: 10px 0 0 10px
+    border-radius: 7px 0 0 7px
+    font-size: 13px
   label
     width: 25%
-    border-radius: 0 10px 10px 0
+    border-radius: 0 7px 7px 0
     text-align: center
-    background-color: green
-    padding: 3.25px
+    background-color: $purp
+    color: #fff
+    line-height: 30px
+    font-size: 15px
+    cursor: pointer
+
+p.qr-link
+  text-align: center
+  font-size: 15px
+  a
+    text-decoration: underline
+    di
+    &:hover
+      cursor: pointer
+
 
 .slidecbcontainer
   margin-bottom: 10px
@@ -405,9 +437,6 @@ table
     padding: 15px 5px
   .hidden
     opacity: 0
-
-.vex-dialog-message
-  font-size: 24px
 
 //          Icons:         //
 
