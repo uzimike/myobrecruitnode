@@ -76,7 +76,7 @@ app.use('/tests/new', newtest);
 
 app.use('/preferences', preferences);
 
-app.use('/mikes-business/applications/jenfni39rf39fjmc', applicationview);
+app.use('/j-consulting/applications/jenfni39rf39fjmc', applicationview);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

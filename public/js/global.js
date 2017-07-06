@@ -106,7 +106,7 @@ $( document ).ready(function() {
           '<h3>What do I do now?</h3>',
           '<p>Applicants need to follow this link to fill out the application form</p>',
           '<div class="clipboard">',
-          '<input id="clipboardselect" name="clipboard" type="text" readonly="readonly" value="https://localhost:3443/mikes-business/applications/jenfni39rf39fjmc"/>',
+          '<input id="clipboardselect" name="clipboard" type="text" readonly="readonly" value="https://localhost:3443/j-consulting/applications/jenfni39rf39fjmc"/>',
           '<label id="clipboardbutton" for="clipboard">Copy to clipboard</label>',
           '</div>',
           '<p>Share this link on job searching platforms to get applicants to apply!</p>',
@@ -196,8 +196,8 @@ $( document ).ready(function() {
             '<p>These are the final steps we need to take.</p>',
             '<ol>',
             "<li>Finalise the applicant's job details</li>",
-            "<li>Create and send an employment offering letter</li>",
-            "<li>Finalise the employment contract and send it to the employee</li>",
+            "<li>Create an employment offering letter</li>",
+            "<li>Finalise the employment contract and send the offering email to the applicant</li>",
             '</ol>',
             '</div>'
           ].join(''),
@@ -332,13 +332,16 @@ $( document ).ready(function() {
           'CEO, J Consulting</p>',
           '</div>',
           '<div class="attached">',
-          '<h4>Attached:</h4>',
-          '<a href="#">Offering Letter</a>, <a href="#">' + getUrlParameter('name') + ' - Employment Contract</a>',
+          '<h4 class="attached">Attached:</h4>',
+          '<a class="attachment" href="#">Offering Letter.pdf</a> <a class="attachment" href="#">' + getUrlParameter('name') + ' - Employment Contract.pdf</a>',
           '</div>'
 
         ].join(''),
         buttons: [$.extend({}, vex.dialog.buttons.YES, { text: 'Send the email' }),
-        $.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })]
+        $.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })],
+        callback: function() {
+          window.location.assign('/email-sent');
+        }
       })
     });
     $('.cancel').click(goBack);

@@ -279,7 +279,7 @@ ul.buttons {
           border-right: none;
           border-bottom: 2px solid #78019d;
           background: none;
-          font-size: 30px;
+          font-size: 20px;
           font-family: 'Montserrat', sans-serif;
           padding: 3px 5px;
           color: #333;
@@ -318,11 +318,15 @@ input.search {
   border-radius: 20px;
   border: 0.5px solid #7c7c7c;
   margin: 0 auto 20px;
-  padding: 4px 10px;
+  padding: 4px 10px 4px 30px;
   width: 80%;
   display: block;
   font-size: 18px;
-  font-weight: 300; }
+  font-weight: 300;
+  background-image: url("/images/search.png");
+  background-position: center left 3px;
+  background-size: auto 95%;
+  background-repeat: no-repeat; }
 
 .option {
   margin-bottom: 10px; }
@@ -339,6 +343,25 @@ input.search {
       text-align: right;
       background: none; }
 
+.email-sent {
+  max-width: 700px;
+  padding: 300px 30px;
+  margin: 0 auto;
+  text-align: center; }
+  .email-sent a {
+    background-color: #78019d;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease; }
+    .email-sent a:hover {
+      background-color: #c50485; }
+
 .vex-finalise input[type="text"], .vex-finalise textarea {
   font-size: 16px; }
 
@@ -347,6 +370,32 @@ input.search {
 
 .vex-finalise label {
   font-size: 13px; }
+
+.vex-dialog-message p.tofrom, .vex-dialog-message .attached {
+  padding: 0 10px;
+  color: #838383 !important; }
+
+.vex-dialog-message .message {
+  padding: 0 20px 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  border: 0.5px solid #7c7c7c; }
+
+.vex-dialog-message .attached {
+  margin-bottom: 5px; }
+
+.vex-dialog-message .attachment {
+  background-color: #0580ff;
+  padding: 5px 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 300; }
+  .vex-dialog-message .attachment:hover {
+    background-color: #0469d1; }
 
 .vex.vex-theme-os .vex-dialog-form .vex-dialog-buttons {
   padding: 0 15px 10px; }
