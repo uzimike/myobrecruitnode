@@ -3,48 +3,47 @@ extends layout
 block content
   
   h1 #{title}
-  h2 
-    .icon.small.add 
-    span #{subtitle}
   .whole-form-building-container
     
     .side-boxes.wfb-child
-      .drag-box.from.fields
+      .drag-box.form.fields.clauses
         .inner-container    
-          h3 Fields
+          h3 Clauses
+          
+          input(type="text", placeholder="search clauses").search
           
           mixin dragfieldbox(name)
             .field.drag
               a
                 span.name= name
+                span.expand
               
-          +dragfieldbox('Text')
-          +dragfieldbox('Checkbox')
+          +dragfieldbox('Leave')
+          +dragfieldbox('General Provisions')
           +dragfieldbox('List')
-        
-      //- .drag-box.from.options
-      //-   .inner-container
-      //-     h3 Options
-      //-     .slidecbcontainer
-      //-       span Require CV
-      //-       .slidecheckbox
-      //-         input#requirecv(type='checkbox', value='None', name='check', checked='')
-      //-         label(for='requirecv')
 
     .form-building-container.wfb-child
       .inner-container
         .inner-inner-container
             input(type="text", placeholder="contract title").title
             .fields
-              mixin fieldbox(name, type)
+              mixin fieldbox(name)
                 .field
                   a
                     span.expand ▼
                     span.name= name
-                    span.type= type
-              +fieldbox('Name', 'Text')
-              +fieldbox('Do you have a drivers license?', 'Checkbox')
-              +fieldbox('What is your current occupation?', 'Text')
+              +fieldbox('Application')
+              +fieldbox('Terms')
+              +fieldbox('Remunerations')
+              +fieldbox('Leave')
+              +fieldbox('Disputes')
+              +fieldbox('Termination')
+              +fieldbox('Personal')
 
-
-  include newobjectbuttonset
+        ul.buttons
+          li
+            a.cancel Cancel
+          li
+            a.download Download letter as PDF
+          li
+            a.send Send to applicant

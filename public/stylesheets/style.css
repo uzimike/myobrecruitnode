@@ -201,6 +201,30 @@ div.new-form {
       height: 80px;
       margin: 0 auto 15px; }
 
+ul.buttons {
+  display: block;
+  text-align: right;
+  position: relative;
+  margin: 30px 0 0 0;
+  padding: 0; }
+  ul.buttons li {
+    display: inline-block; }
+    ul.buttons li.cancel a {
+      background-color: #7c7c7c;
+      position: absolute;
+      left: 0;
+      top: 0; }
+    ul.buttons li a {
+      padding: 12px;
+      display: block;
+      background-color: #78019d;
+      color: #fff;
+      text-transform: lowercase;
+      margin-right: 10px;
+      cursor: pointer; }
+    ul.buttons li:last-child a {
+      margin-right: 0; }
+
 .whole-form-building-container {
   width: 100%; }
   .whole-form-building-container .wfb-child {
@@ -222,6 +246,16 @@ div.new-form {
       box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4); }
       .whole-form-building-container .side-boxes .drag-box h3 {
         text-align: center; }
+      .whole-form-building-container .side-boxes .drag-box.clauses .field {
+        margin-bottom: 0; }
+        .whole-form-building-container .side-boxes .drag-box.clauses .field::after {
+          content: "-";
+          float: right;
+          font-size: 17px; }
+        .whole-form-building-container .side-boxes .drag-box.clauses .field:hover {
+          cursor: pointer; }
+          .whole-form-building-container .side-boxes .drag-box.clauses .field:hover::after {
+            content: "+"; }
   .whole-form-building-container .form-building-container {
     width: 70%;
     margin-bottom: 40px; }
@@ -267,6 +301,25 @@ div.new-form {
               float: right;
               font-size: 13px;
               color: #9b9b9b; }
+    .whole-form-building-container .form-building-container.offering-letter .inner-container {
+      padding: 0; }
+      .whole-form-building-container .form-building-container.offering-letter .inner-container textarea {
+        background: none;
+        border: none;
+        resize: none;
+        width: 100%;
+        min-height: 700px;
+        font-size: 18px; }
+
+input.search {
+  border-radius: 20px;
+  border: 0.5px solid #7c7c7c;
+  margin: 0 auto 20px;
+  padding: 4px 10px;
+  width: 80%;
+  display: block;
+  font-size: 18px;
+  font-weight: 300; }
 
 .option {
   margin-bottom: 10px; }

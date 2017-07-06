@@ -51,6 +51,31 @@ $( document ).ready(function() {
     });
   }// endif atpage(recruit/new)
   else if (atPage('applications/new') || atPage('tests/new')) {
+    interact('.form-building-container .fields .field')
+        .draggable({
+            snap: {
+                targets: [
+                    interact.createSnapGrid({ x: 30, y: 30 })
+                ],
+                range: Infinity,
+                relativePoints: [ { x: 0, y: 0 } ]
+            },
+            inertia: true,
+            restrict: {
+                restriction: ('.form-building-container .inner-inner-container'),
+                elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
+                endOnly: true
+            }
+        })
+        .on('dragmove', function (event) {
+            x += event.dx;
+            y += event.dy;
+
+
+            event.target.style.webkitTransform =
+                event.target.style.transform =
+                    'translate(' + x + 'px, ' + y + 'px)';
+        });
     $('.submit').click(goBack);
     $('.cancel').click(goBack);
   }
@@ -172,8 +197,13 @@ $( document ).ready(function() {
                         '&employeeAddress=',encodeURIComponent(data.employeeAddress),
                         '&workAddress=',encodeURIComponent(data.workAddress),
                         '&supervisor=',encodeURIComponent(data.supervisor),
-                        '&dueDate=',encodeURIComponent(data.dueDate)
+                        '&dueDate=',encodeURIComponent(data.dueDate),
+                        '&jobTitle=',encodeURIComponent(data.jobTitle),
+                        '&jobDesc=',encodeURIComponent(data.jobDesc),
+                        '&employmentType=',encodeURIComponent(data.employmentType)
                       ].join('');
+
+                      window.location.replace('/offer-letter/new' + urlQuery);
                     }
                   }
                 })
@@ -185,7 +215,54 @@ $( document ).ready(function() {
       }
     });
   }
+  else if(atPage('offer-letter/new')) {
+    $('.form-building-container.offering-letter .inner-container .inner-inner-container .textarea').append([
+      '7/07/2017</br></br>',
+      '<strong>' + getUrlParameter('name') + '</strong></br></br>',
+      '<strong>' + getUrlParameter('employeeAddress') + '</strong></br></br></br>',
+      'Dear <strong>' + getUrlParameter('name') + '</strong>,</br></br>',
+      'Offer of Employment' + '</br></br>',
+      'I am pleased to offer you the position of <strong>' + getUrlParameter('jobTitle') + '</strong> at J Consulting, based at <strong>' + getUrlParameter('workAddress') + '</strong> starting on <strong>' + getUrlParameter('dueDate') + '</strong>. Attached is an employment agreement setting out the proposed terms and conditions.</br></br>',
+      'You can discuss this offer and seek advice on the agreement with your family, a union, a lawyer, or someone else you trust.</br></br>',
+      'If there is anything you are unclear about, disagree with or wish to discuss about the agreement or about the position, please contact <strong>' + getUrlParameter('supervisor') + '</strong>.</br></br>',
+      'If you are happy with the proposed terms and wish to accept this offer, please sign the attached copy of this letter and return it to me by <strong>' + getUrlParameter('dueDate') + '</strong>. Please also sign a copy of the agreement and return it to me by the same date. If I have not heard from you by that date, this offer will be automatically withdrawn.</br>',
+      'I look forward to working with you.</br></br>',
+      'Yours sincerely,</br></br>',
+      'Jared O. Josh</br></br>',
+      'I, <strong>' + getUrlParameter('name') + '</strong>, confirm I have read this letter and the employment agreement, that I fully understand both documents and their implications and that I accept the offer of employment.'
+    ].join(''));
+  }
   else if(atPage('contracts/new')) {
+    interact('.form-building-container .fields .field')
+        .draggable({
+            snap: {
+                targets: [
+                    interact.createSnapGrid({ x: 30, y: 30 })
+                ],
+                range: Infinity,
+                relativePoints: [ { x: 0, y: 0 } ]
+            },
+            inertia: true,
+            restrict: {
+                restriction: ('.form-building-container .inner-inner-container'),
+                elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
+                endOnly: true
+            }
+        })
+        .on('dragmove', function (event) {
+            x += event.dx;
+            y += event.dy;
+
+            event.target.style.webkitTransform =
+                event.target.style.transform =
+                    'translate(' + x + 'px, ' + y + 'px)';
+        });
+        $('.field.drag').each(function(){
+            $(this).click(function(){
+                var typeSelector=($(this).find('span').html());
+                $(".form-building-container .fields").append('<div class="field"><a><span class="expand">▼</span><span class="name">Enter Text</span><span class="type">'+typeSelector+'</span></a></div>');
+            });
+        });
     $('.cancel').click(goBack);
   }
 
@@ -240,13 +317,6 @@ $( document ).ready(function() {
     }
   }
 
-
-  $('.field.drag').each(function(){
-      $(this).click(function(){
-          var typeSelector=($(this).find('span').html());
-          $(".form-building-container .fields").append('<div class="field"><a><span class="expand">▼</span><span class="name">Enter Text</span><span class="type">'+typeSelector+'</span></a></div>');
-      });
-  });
     // // target elements with the "draggable" class
     // interact('.form-building-container .fields .field')
     //     .draggable({
@@ -291,32 +361,6 @@ $( document ).ready(function() {
     // }
     var element = document.getElementsByClassName('.form-building-container .fields .field'),
         x = 0, y = 0;
-
-    interact('.form-building-container .fields .field')
-        .draggable({
-            snap: {
-                targets: [
-                    interact.createSnapGrid({ x: 30, y: 30 })
-                ],
-                range: Infinity,
-                relativePoints: [ { x: 0, y: 0 } ]
-            },
-            inertia: true,
-            restrict: {
-                restriction: ('.form-building-container .inner-inner-container'),
-                elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
-                endOnly: true
-            }
-        })
-        .on('dragmove', function (event) {
-            x += event.dx;
-            y += event.dy;
-
-
-            event.target.style.webkitTransform =
-                event.target.style.transform =
-                    'translate(' + x + 'px, ' + y + 'px)';
-        });
 
 
 
