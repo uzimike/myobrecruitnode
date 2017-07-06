@@ -3,38 +3,19 @@ extends layout
 block content
   
   h1 #{title}
-  h2 
-    .icon.small.add 
-    span #{subtitle}
+  h2 Please check this offering letter before presenting this to your applicant
   .whole-form-building-container
-    
-    .side-boxes.wfb-child
-      .drag-box.from.fields
-        .inner-container    
-          h3 Fields
-          
-          mixin dragfieldbox(name)
-            .field.drag
-              a
-                span.name= name
-              
-          +dragfieldbox('Text')
-          +dragfieldbox('Checkbox')
-          +dragfieldbox('List')
 
-    .form-building-container.wfb-child
+    .form-building-container.offering-letter
       .inner-container
         .inner-inner-container
-            input(type="text", placeholder="contract title").title
-            .fields
-              mixin fieldbox(name, type)
-                .field
-                  a
-                    span.expand ▼
-                    span.name= name
-                    span.type= type
-              +fieldbox('Name', 'Text')
-              +fieldbox('Do you have a drivers license?', 'Checkbox')
-              +fieldbox('What is your current occupation?', 'Text')
-          
-    include newobjectbuttonset
+            .textarea
+        ul.buttons
+          li.cancel
+            a Cancel
+          li.edit
+            a Edit
+          li.download
+            a Download letter as PDF
+          li.contract-make
+            a Create the contract
