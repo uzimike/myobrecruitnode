@@ -17,6 +17,7 @@ $( document ).ready(function() {
       }
     });
     form.children("div").steps({
+
       headerTag: "h3",
       bodyTag: "section",
       transitionEffect: "slideLeft",
@@ -46,6 +47,7 @@ $( document ).ready(function() {
         ].join('');
         window.location.replace('/recruit/my-recruitment-plan?created=true'+job);
       }
+
     });
   }// endif atpage(recruit/new)
   else if (atPage('applications/new') || atPage('tests/new')) {
@@ -218,6 +220,7 @@ $( document ).ready(function() {
     })
   }
 
+
   function getUrlParameter(sParam) {
     try {
       var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -236,5 +239,85 @@ $( document ).ready(function() {
       console.log("ERROR DECODING URI: " + ex.message);
     }
   }
+
+
+  $('.field.drag').each(function(){
+      $(this).click(function(){
+          var typeSelector=($(this).find('span').html());
+          $(".form-building-container .fields").append('<div class="field"><a><span class="expand">▼</span><span class="name">Enter Text</span><span class="type">'+typeSelector+'</span></a></div>');
+      });
+  });
+    // // target elements with the "draggable" class
+    // interact('.form-building-container .fields .field')
+    //     .draggable({
+    //         // enable inertial throwing
+    //         inertia: true,
+    //         // keep the element within the area of it's parent
+    //         restrict: {
+    //             restriction: "parent",
+    //             endOnly: true,
+    //             elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+    //         },
+    //         // enable autoScroll
+    //         autoScroll: true,
+    //
+    //         // call this function on every dragmove event
+    //         onmove: dragMoveListener,
+    //         // call this function on every dragend event
+    //         onend: function (event) {
+    //             var textEl = event.target.querySelector('p');
+    //
+    //             textEl && (textEl.textContent =
+    //                 'moved a distance of '
+    //                 + (Math.sqrt(event.dx * event.dx +
+    //                     event.dy * event.dy)|0) + 'px');
+    //         }
+    //     });
+    //
+    // function dragMoveListener (event) {
+    //     var target = event.target,
+    //         // keep the dragged position in the data-x/data-y attributes
+    //         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+    //         y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+    //
+    //     // translate the element
+    //     target.style.webkitTransform =
+    //         target.style.transform =
+    //             'translate(' + x + 'px, ' + y + 'px)';
+    //
+    //     // update the posiion attributes
+    //     target.setAttribute('data-x', x);
+    //     target.setAttribute('data-y', y);
+    // }
+    var element = document.getElementsByClassName('.form-building-container .fields .field'),
+        x = 0, y = 0;
+
+    interact('.form-building-container .fields .field')
+        .draggable({
+            snap: {
+                targets: [
+                    interact.createSnapGrid({ x: 30, y: 30 })
+                ],
+                range: Infinity,
+                relativePoints: [ { x: 0, y: 0 } ]
+            },
+            inertia: true,
+            restrict: {
+                restriction: ('.form-building-container .inner-inner-container'),
+                elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
+                endOnly: true
+            }
+        })
+        .on('dragmove', function (event) {
+            x += event.dx;
+            y += event.dy;
+
+
+            event.target.style.webkitTransform =
+                event.target.style.transform =
+                    'translate(' + x + 'px, ' + y + 'px)';
+        });
+
+
 
 });
