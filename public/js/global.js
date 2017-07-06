@@ -117,7 +117,7 @@ $( document ).ready(function() {
       });
   });
     // target elements with the "draggable" class
-    interact('.draggable')
+    interact('.form-building-container .fields .field')
         .draggable({
             // enable inertial throwing
             inertia: true,
