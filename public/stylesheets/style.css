@@ -85,17 +85,21 @@ img {
   width: -webkit-calc(100% - 320px);
   width: -moz-calc(100% - 320px);
   width: calc(100% - 320px);
-  max-width: -webkit-calc(1500px - 320px);
-  max-width: -moz-calc(1500px - 320px);
-  max-width: calc(1500px - 320px); }
+  overflow-y: scroll; }
 
 .inner-container.content {
-  padding: 50px 60px; }
+  padding: 50px 60px;
+  max-width: -webkit-calc(1400px - 320px);
+  max-width: -moz-calc(1400px - 320px);
+  max-width: calc(1400px - 320px); }
 
 #menu, #content {
   min-height: -webkit-calc(100% - 4px);
   min-height: -moz-calc(100% - 4px);
   min-height: calc(100% - 4px);
+  height: -webkit-calc(100% - 4px);
+  height: -moz-calc(100% - 4px);
+  height: calc(100% - 4px);
   position: absolute;
   padding-top: 4px; }
 
@@ -187,6 +191,16 @@ div.new-form {
     div.new-form .inner-container span {
       font-size: 14px; }
 
+.edit-obj ul li {
+  width: 160px;
+  min-height: 160px; }
+  .edit-obj ul li a .inner-container {
+    padding: 15px 10px 10px 10px; }
+    .edit-obj ul li a .inner-container .icon.small {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 15px; }
+
 .whole-form-building-container {
   width: 100%; }
   .whole-form-building-container .wfb-child {
@@ -209,9 +223,10 @@ div.new-form {
       .whole-form-building-container .side-boxes .drag-box h3 {
         text-align: center; }
   .whole-form-building-container .form-building-container {
-    width: 70%; }
+    width: 70%;
+    margin-bottom: 40px; }
     .whole-form-building-container .form-building-container .inner-container {
-      padding: 0 30px;
+      padding: 0 0 0 30px;
       position: relative; }
       .whole-form-building-container .form-building-container .inner-container .inner-inner-container {
         padding: 25px 30px;
@@ -268,6 +283,13 @@ div.new-form {
       text-align: right;
       background: none; }
 
+.vex-finalise {
+  font-size: 16px; }
+  .vex-finalise textarea {
+    resize: none; }
+  .vex-finalise label {
+    font-size: 13px; }
+
 .vex.vex-theme-os .vex-dialog-form .vex-dialog-buttons {
   padding: 0 15px 10px; }
 
@@ -276,13 +298,23 @@ div.new-form {
   font-size: 17px; }
 
 .vex.vex-theme-os .vex-dialog-button.vex-dialog-button-primary {
-  background-color: #78019d !important; }
+  background-color: #78019d !important;
+  letter-spacing: 0;
+  border-radius: 0; }
 
 .vex.vex-theme-os .vex-content {
-  width: 700px; }
+  width: 800px; }
 
 .vex-field-wrapper {
   margin: 10px 15px 30px; }
+
+.qr-container {
+  overflow: hidden;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -ms-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease; }
 
 div.clipboard {
   width: 100%;
@@ -291,28 +323,44 @@ div.clipboard {
     float: left;
     border: none !important;
     height: 40px;
-    padding: 5px 10px; }
+    padding: 5px 0.5%;
+    text-align: center; }
   div.clipboard input {
-    width: 75%;
+    width: 74% !important;
     border-radius: 7px 0 0 7px;
     font-size: 13px; }
   div.clipboard label {
-    width: 25%;
+    width: 24% !important;
     border-radius: 0 7px 7px 0;
-    text-align: center;
     background-color: #78019d;
     color: #fff;
     line-height: 30px;
-    font-size: 15px;
+    font-size: 15.5px;
     cursor: pointer; }
+
+.content.inner-container > div.clipboard {
+  width: 80%;
+  margin-bottom: 20px; }
+  .content.inner-container > div.clipboard input {
+    font-size: 17px; }
+  .content.inner-container > div.clipboard label {
+    line-height: 40px; }
 
 p.qr-link {
   text-align: center;
-  font-size: 15px; }
+  font-size: 15px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
   p.qr-link a {
     text-decoration: underline; }
     p.qr-link a:hover {
       cursor: pointer; }
+    p.qr-link a.hide {
+      pointer-events: none;
+      opacity: 0; }
 
 .slidecbcontainer {
   margin-bottom: 10px; }
@@ -364,20 +412,31 @@ p.qr-link {
       visibility: hidden; }
       .slidecbcontainer .slidecheckbox input[type=checkbox]:checked + label {
         left: 38px; }
-  .slidecbcontainer ul.table-menu {
-    width: 100%;
-    margin: 30px 0 20px;
-    padding: 0; }
-    .slidecbcontainer ul.table-menu li {
-      list-style-type: none;
-      display: inline-block;
-      margin-right: 30px; }
-      .slidecbcontainer ul.table-menu li .icon {
-        margin-right: 6px; }
-      .slidecbcontainer ul.table-menu li span {
-        font-size: 17px;
-        position: relative;
-        top: -10px; }
+
+ul.table-menu {
+  width: 100%;
+  margin: 30px 0 20px;
+  padding: 0; }
+  ul.table-menu li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    ul.table-menu li a {
+      display: inline-block; }
+    ul.table-menu li:hover {
+      transform: translateY(-6px); }
+    ul.table-menu li .icon {
+      margin-right: 6px; }
+    ul.table-menu li span {
+      font-size: 17px;
+      position: relative;
+      top: -10px; }
 
 .newobjectbuttonset {
   width: 100%;

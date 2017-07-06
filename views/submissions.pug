@@ -4,42 +4,51 @@ block content
   h1 Recruiting
   h2= title
   
+  h3 Share
+  .clipboard
+    input#clipboardselect2(name="clipboard2" type="text" readonly="readonly" value="https://localhost:3443/mikes-business/applications/jenfni39rf39fjmc")
+    label#clipboardbutton2(for="clipboard2") Copy to clipboard
+    
+  .clearfix
+  
+  h3 Edit Forms
   .edit-obj
     ul
       li
         a(href='/applications/new')
           .inner-container
             .icon.small.application
-            span Application Form
-    ul
+            span Application
+              br
+              | Form
       li  
         a(href='/tests/new')
           .inner-container
             .icon.small.test
-            span Test Form
-    ul
-      li
-        a(href='/contracts')
-          .inner-container
-            .icon.small.contract
-            span Contract
-    
+            span Test
+              br
+              | Form
+
   .clearfix
     
-  h3 Applicants
+  h2 Applicants
   
   ul.table-menu
     li
-      a
+      a.decline-button
         .icon.small.trash
         span Decline
     li
-      a
+      a.approve-button
         .icon.small.approve
         span Shortlist
+    li
+      a.hire-button
+        .icon.small.employee
+        span Hire
   
   mixin tablerow(name, email, phone, testscore)
-    tr
+    tr.applicant
       td.checkbox 
         input(type="checkbox")
       td.name= name
@@ -48,7 +57,7 @@ block content
       td.testscore.hidden= testscore
   
   table.applicants
-    tr
+    tr.head
       th.checkbox
       th.name Name
       th.email Email
@@ -58,7 +67,6 @@ block content
     +tablerow("John Reese", "johnreese@zmail.com", "920 409 324", "74%")
     +tablerow("Mary Applefield", "ma0192@zmail.com", "234 3456", "91%")
     +tablerow("Ron Stzergsat", "ron5tz@zmail.com", "948 23 553", "Not yet submitted")
-    +tablerow("Darsey Hammond", "darsham@zmail.com", "9438 523 094", "50%")
     +tablerow("Jane Carter", "janecar@zmail.com", "234 5333", "Not yet submitted")
     +tablerow("Penelope Perry", "pp66@zmail.com", "403 2339", "83%")
     

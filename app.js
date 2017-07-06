@@ -15,6 +15,8 @@ var submissions = require('./routes/submissions');
 var employees = require('./routes/employees');
 var employees = require('./routes/newemployee');
 
+var newofferletter = require('./routes/newofferletter');
+
 var contracts = require('./routes/contracts');
 var newcontract = require('./routes/newcontract');
 
@@ -56,6 +58,8 @@ app.use('/recruit/my-recruitment-plan', submissions);
 
 app.use('/employees', employees);
 app.use('/employees/new', employees);
+
+app.use('/offer-letter/new', newofferletter);
 
 app.use('/contracts', contracts);
 app.use('/contracts/new', newcontract);
