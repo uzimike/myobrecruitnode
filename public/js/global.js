@@ -318,6 +318,23 @@ $( document ).ready(function() {
                     'translate(' + x + 'px, ' + y + 'px)';
         });
 
+    $(".decline-button").click( function() {
+        $('.applicants .applicant').each(function(){
+            if ($(this).find('.checkbox input')[0].checked) {
+                $(this).hide();
+            }
 
+        });
+        }
+    );
+    $(".approve-button").click( function() {
+            $('.applicants .applicant').each(function(){
+                if (!$(this).find('.checkbox input')[0].checked) {
+                    $(this).hide();
+                }
+
+            });
+        }
+    );
 
 });
