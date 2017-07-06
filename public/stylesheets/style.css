@@ -11,6 +11,9 @@ body {
   background-color: #eee;
   color: #333; }
 
+a {
+  cursor: pointer; }
+
 h1, h2, h3 {
   font-weight: 300;
   margin-top: 0; }

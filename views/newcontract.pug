@@ -18,7 +18,6 @@ block content
                 span.name= name
                 span.expand
               
-          +dragfieldbox('Leave')
           +dragfieldbox('General Provisions')
           +dragfieldbox('List')
 
@@ -41,9 +40,11 @@ block content
               +fieldbox('Personal')
 
         ul.buttons
-          li
-            a.cancel Cancel
-          li
-            a.download Download letter as PDF
-          li
-            a.send Send to applicant
+          li.cancel
+            a Cancel
+          li.download
+            a Download contract as PDF
+          li.preview
+            a Preview
+          li.send
+            a Finish and send to applicant

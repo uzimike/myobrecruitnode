@@ -41,6 +41,7 @@ $( document ).ready(function() {
           '&jt=' + encodeURIComponent($(".confirm label.job-title").text()),
           '&jdesc=' + encodeURIComponent($(".confirm label.job-desc").text()),
           '&payment=' + encodeURIComponent($("input#per-hour-payment").val()),
+          '&employment=' + encodeURIComponent($('.employment-type.confirm-input').text()),
           '&pay-period=' + encodeURIComponent($("select#payment-period").val()),
           '&hours=' + encodeURIComponent($("input#hours").val()),
           '&hours-period=' + encodeURIComponent($("select#hours-period").val())
@@ -49,8 +50,17 @@ $( document ).ready(function() {
       }
 
     });
+    $('.new-form a.new-application').click(function() {
+      window.location.assign('/applications/new?title=' + encodeURIComponent($("#job-title").val()));
+    });
+    $('.new-form a.new-application').click(function() {
+      window.location.assign('/applications/new?title=' + encodeURIComponent($("#job-title").val()));
+    });
   }// endif atpage(recruit/new)
   else if (atPage('applications/new') || atPage('tests/new')) {
+    if (getUrlParameter('title')!=false) {
+      $('input.title').val(getUrlParameter('title') + ': Application Form');
+    }
     interact('.form-building-container .fields .field')
     .draggable({
       snap: {
@@ -120,6 +130,35 @@ $( document ).ready(function() {
         $(this).addClass('hide');
       });
     }
+    $(".decline-button").click( function() {
+      $('.applicants .applicant').each(function(){
+        if ($(this).find('.checkbox input')[0].checked) {
+          $(this).hide();
+          uncheck();
+
+        }
+
+      });
+    });
+    function uncheck() {
+      var uncheck=document.getElementsByTagName('input');
+      for(var i=0;i<uncheck.length;i++)
+      {
+        if(uncheck[i].type=='checkbox')
+        {
+          uncheck[i].checked=false;
+        }
+      }
+    }
+    $(".approve-button").click( function() {
+      $('.applicants .applicant').each(function(){
+        if (!$(this).find('.checkbox input')[0].checked) {
+          $(this).hide();
+          uncheck();
+        }
+
+      });
+    });
     $('a.hire-button').click(function(){
       var checkFound = false,
       applicant,
@@ -229,8 +268,11 @@ $( document ).ready(function() {
       'I look forward to working with you.</br></br>',
       'Yours sincerely,</br></br>',
       'Jared O. Josh</br></br>',
-      'I, <strong>' + getUrlParameter('name') + '</strong>, confirm I have read this letter and the employment agreement, that I fully understand both documents and their implications and that I accept the offer of employment.'
+      '<em>I, <strong>' + getUrlParameter('name') + '</strong>, confirm I have read this letter and the employment agreement, that I fully understand both documents and their implications and that I accept the offer of employment.</em>'
     ].join(''));
+    $('li.contract-make a').click(function(){
+      window.location.replace('/contracts/new');
+    });
   }
   else if(atPage('contracts/new')) {
     interact('.form-building-container .fields .field')
@@ -317,82 +359,7 @@ $( document ).ready(function() {
     }
   }
 
-  // // target elements with the "draggable" class
-  // interact('.form-building-container .fields .field')
-  //     .draggable({
-  //         // enable inertial throwing
-  //         inertia: true,
-  //         // keep the element within the area of it's parent
-  //         restrict: {
-  //             restriction: "parent",
-  //             endOnly: true,
-  //             elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-  //         },
-  //         // enable autoScroll
-  //         autoScroll: true,
-  //
-  //         // call this function on every dragmove event
-  //         onmove: dragMoveListener,
-  //         // call this function on every dragend event
-  //         onend: function (event) {
-  //             var textEl = event.target.querySelector('p');
-  //
-  //             textEl && (textEl.textContent =
-  //                 'moved a distance of '
-  //                 + (Math.sqrt(event.dx * event.dx +
-  //                     event.dy * event.dy)|0) + 'px');
-  //         }
-  //     });
-  //
-  // function dragMoveListener (event) {
-  //     var target = event.target,
-  //         // keep the dragged position in the data-x/data-y attributes
-  //         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-  //         y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-  //
-  //     // translate the element
-  //     target.style.webkitTransform =
-  //         target.style.transform =
-  //             'translate(' + x + 'px, ' + y + 'px)';
-  //
-  //     // update the posiion attributes
-  //     target.setAttribute('data-x', x);
-  //     target.setAttribute('data-y', y);
-  // }
-  var element = document.getElementsByClassName('.form-building-container .fields .field'),
-  x = 0, y = 0;
 
-  $(".decline-button").click( function() {
-    $('.applicants .applicant').each(function(){
-      if ($(this).find('.checkbox input')[0].checked) {
-        $(this).hide();
-        uncheck();
-
-      }
-
-    });
-  }
-);
-function uncheck()
-{
-  var uncheck=document.getElementsByTagName('input');
-  for(var i=0;i<uncheck.length;i++)
-  {
-    if(uncheck[i].type=='checkbox')
-    {
-      uncheck[i].checked=false;
-    }
-  }
-}
-$(".approve-button").click( function() {
-  $('.applicants .applicant').each(function(){
-    if (!$(this).find('.checkbox input')[0].checked) {
-      $(this).hide();
-      uncheck();
-    }
-
-  });
-});
 
 
 });

@@ -34,7 +34,7 @@ block content
     .form-building-container.wfb-child
       .inner-container
         .inner-inner-container
-            input(type="text", placeholder="application title").title
+            input(type="text", placeholder="").title
             .fields
               mixin fieldbox(name, type)
                 .field
@@ -42,8 +42,9 @@ block content
                     span.expand ▼
                     span.name= name
                     span.type= type
-              +fieldbox('Name', 'Text')
-              +fieldbox('Do you have a drivers license?', 'Checkbox')
-              +fieldbox('What is your current occupation?', 'Text')
+              +fieldbox('Name', 'Name')
+              +fieldbox('Email', 'Email')
+              +fieldbox('Phone', 'Phone')
+              +fieldbox("Do you have a full driver's license?", 'checkbox')
           
     include newobjectbuttonset
