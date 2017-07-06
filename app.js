@@ -8,6 +8,8 @@ var sassMiddleware = require('node-sass-middleware');
 
 var index = require('./routes/index');
 
+var email = require('./routes/email-sent');
+
 var recruit = require('./routes/recruit');
 var newrecruit = require('./routes/newrecruit');
 var submissions = require('./routes/submissions');
@@ -51,6 +53,8 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+
+app.use('/email-sent', email);
 
 app.use('/recruit', recruit);
 app.use('/recruit/new', newrecruit);

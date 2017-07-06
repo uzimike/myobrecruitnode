@@ -53,13 +53,20 @@ $( document ).ready(function() {
     $('.new-form a.new-application').click(function() {
       window.location.assign('/applications/new?title=' + encodeURIComponent($("#job-title").val()));
     });
-    $('.new-form a.new-application').click(function() {
-      window.location.assign('/applications/new?title=' + encodeURIComponent($("#job-title").val()));
+    $('.new-form a.new-test').click(function() {
+      window.location.assign('/tests/new?title=' + encodeURIComponent($("#job-title").val()));
     });
   }// endif atpage(recruit/new)
   else if (atPage('applications/new') || atPage('tests/new')) {
     if (getUrlParameter('title')!=false) {
-      $('input.title').val(getUrlParameter('title') + ': Application Form');
+      var type = "";
+      if (atPage('tests/new')) {
+        type = 'Test';
+      }
+      else {
+        type = 'Application';
+      }
+      $('input.title').val(getUrlParameter('title') + ': ' + type + ' Form');
     }
     interact('.form-building-container .fields .field')
     .draggable({
@@ -233,6 +240,7 @@ $( document ).ready(function() {
                       var urlQuery = [
                         '?create=true',
                         '&name=',encodeURIComponent(name),
+                        '&email=',encodeURIComponent(email),
                         '&employeeAddress=',encodeURIComponent(data.employeeAddress),
                         '&workAddress=',encodeURIComponent(data.workAddress),
                         '&supervisor=',encodeURIComponent(data.supervisor),
@@ -271,10 +279,15 @@ $( document ).ready(function() {
       '<em>I, <strong>' + getUrlParameter('name') + '</strong>, confirm I have read this letter and the employment agreement, that I fully understand both documents and their implications and that I accept the offer of employment.</em>'
     ].join(''));
     $('li.contract-make a').click(function(){
-      window.location.replace('/contracts/new');
+      var urlQuery = [
+        '?name=' + getUrlParameter('name'),
+        '&email=' + getUrlParameter('email')
+      ].join('');
+      window.location.assign('/contracts/new' + urlQuery);
     });
   }
   else if(atPage('contracts/new')) {
+    $('input.title').val(getUrlParameter('name') + " - Employment Contract");
     interact('.form-building-container .fields .field')
     .draggable({
       snap: {
@@ -304,6 +317,29 @@ $( document ).ready(function() {
         var typeSelector=($(this).find('span').html());
         $(".form-building-container .fields").append('<div class="field"><a><span class="expand">▼</span><span class="name">Enter Text</span><span class="type">'+typeSelector+'</span></a></div>');
       });
+    });
+    $('li.send a').click(function() {
+      vex.dialog.open({
+        unsafeMessage:[
+          '<h2>Email Message and Confirmation</h2>',
+          '<h3>This is the email you will send to ' + getUrlParameter('name') + '. Please make sure the email details are correct!</h3>',
+          '<p class="tofrom">To: ' + getUrlParameter('name') + ' (' + getUrlParameter('email') + '); From: Jared O. Josh (jared@jconsulting.com)</p>',
+          '<div class="message">',
+          '<p>Dear ' + getUrlParameter('name') + ',</p>',
+          '<p>Attached is your offering letter and employment contract. Please carefully read both documents before you consider our offer of employment.</p>',
+          '<p>Yours sincerely,</p>',
+          '<p>Jared O. Josh</br>',
+          'CEO, J Consulting</p>',
+          '</div>',
+          '<div class="attached">',
+          '<h4>Attached:</h4>',
+          '<a href="#">Offering Letter</a>, <a href="#">' + getUrlParameter('name') + ' - Employment Contract</a>',
+          '</div>'
+
+        ].join(''),
+        buttons: [$.extend({}, vex.dialog.buttons.YES, { text: 'Send the email' }),
+        $.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })]
+      })
     });
     $('.cancel').click(goBack);
   }
