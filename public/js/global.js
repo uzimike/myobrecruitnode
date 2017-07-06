@@ -138,22 +138,22 @@ $( document ).ready(function() {
                     '<h2>Finalise Job Details</h2>',
                     '<h3>Check and complete the following job details</h3>',
                     '<h4>Check Details</h4>',
-                    '<label for="job-title">Job Title</label></br>',
-                    '<input name="job-title" id="job-title" value="' + getUrlParameter('jt') + '"></br>',
-                    '<label for="job-desc">Job Description</label></br>',
-                    '<textarea name="job-desc" id="job-desc">' + getUrlParameter('jdesc') + '</textarea></br>',
-                    '<label for="employment-type">Employment Type</label></br>',
-                    '<input name="employment-type" id="employment-type" value="' + getUrlParameter('employment') + '">',
+                    '<label for="jobTitle">Job Title</label></br>',
+                    '<input type="text" name="jobTitle" id="job-title" value="' + getUrlParameter('jt') + '"></br>',
+                    '<label for="jobDesc">Job Description</label></br>',
+                    '<textarea name="jobDesc" id="job-desc">' + getUrlParameter('jdesc') + '</textarea></br>',
+                    '<label for="employmentType">Employment Type</label></br>',
+                    '<input type="text" name="employmentType" id="employment-type" value="' + getUrlParameter('employment') + '">',
 
                     '<h4>Add details</h4>',
-                    '<label for="employee-address">Employee address</label></br>',
-                    '<input name="employee-address" type="text" placeholder="Employee address"></br>',
-                    '<label for="work-address">New work address</label></br>',
-                    '<input name="work-address" type="text" placeholder="New work address"></br>',
+                    '<label for="employeeAddress">Employee address</label></br>',
+                    '<input name="employeeAddress" type="text" placeholder="Employee address" value="36 Kruger Avenue, Wellington"></br>',
+                    '<label for="workAddress">New work address</label></br>',
+                    '<input name="workAddress" type="text" placeholder="New work address" value="83 Grand Street, Auckland"></br>',
                     '<label for="supervisor">Supervisor name (optional)</label></br>',
-                    '<input name="supervisor" type="text" placeholder="Supervisor name (optional)"></br>',
-                    '<label for="due-date">Offer due date</label></br>',
-                    '<input name="due-date" type="text" placeholder="Offer due date">',
+                    '<input name="supervisor" type="text" placeholder="Supervisor name (optional)" value=""></br>',
+                    '<label for="dueDate">Offer due date</label></br>',
+                    '<input name="dueDate" type="text" placeholder="Offer due date">',
                     '</div>'
                   ].join(''),
                   buttons:
@@ -164,7 +164,14 @@ $( document ).ready(function() {
                       console.log("data don't exist")
                     }
                     else {
-                      
+                      var urlQuery = [
+                        '?create=true',
+                        '&name=',encodeURIComponent(name),
+                        '&employeeAddress=',encodeURIComponent(data.employeeAddress),
+                        '&workAddress=',encodeURIComponent(data.workAddress),
+                        '&supervisor=',encodeURIComponent(data.supervisor),
+                        '&dueDate=',encodeURIComponent(data.dueDate)
+                      ]
                     }
                   }
                 })

@@ -283,6 +283,9 @@ div.new-form {
       text-align: right;
       background: none; }
 
+.vex-finalise label {
+  font-size: 13px; }
+
 .vex.vex-theme-os .vex-dialog-form .vex-dialog-buttons {
   padding: 0 15px 10px; }
 
