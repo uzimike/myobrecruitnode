@@ -85,17 +85,21 @@ img {
   width: -webkit-calc(100% - 320px);
   width: -moz-calc(100% - 320px);
   width: calc(100% - 320px);
-  max-width: -webkit-calc(1500px - 320px);
-  max-width: -moz-calc(1500px - 320px);
-  max-width: calc(1500px - 320px); }
+  overflow-y: scroll; }
 
 .inner-container.content {
-  padding: 50px 60px; }
+  padding: 50px 60px;
+  max-width: -webkit-calc(1400px - 320px);
+  max-width: -moz-calc(1400px - 320px);
+  max-width: calc(1400px - 320px); }
 
 #menu, #content {
   min-height: -webkit-calc(100% - 4px);
   min-height: -moz-calc(100% - 4px);
   min-height: calc(100% - 4px);
+  height: -webkit-calc(100% - 4px);
+  height: -moz-calc(100% - 4px);
+  height: calc(100% - 4px);
   position: absolute;
   padding-top: 4px; }
 

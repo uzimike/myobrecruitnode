@@ -96,17 +96,21 @@ img
   width: -webkit-calc(100% - #{$side-width})
   width:    -moz-calc(100% - #{$side-width})
   width:         calc(100% - #{$side-width})
-  max-width: -webkit-calc(1500px - #{$side-width})
-  max-width:    -moz-calc(1500px - #{$side-width})
-  max-width:         calc(1500px - #{$side-width})
+  overflow-y: scroll
 
 .inner-container.content
   padding: 50px 60px
+  max-width: -webkit-calc(1400px - #{$side-width})
+  max-width:    -moz-calc(1400px - #{$side-width})
+  max-width:         calc(1400px - #{$side-width})
 
 #menu, #content
   min-height: -webkit-calc(100% - #{$topborder-height})
   min-height:    -moz-calc(100% - #{$topborder-height})
   min-height:         calc(100% - #{$topborder-height})
+  height: -webkit-calc(100% - #{$topborder-height})
+  height:    -moz-calc(100% - #{$topborder-height})
+  height:         calc(100% - #{$topborder-height})
   position: absolute
   padding-top: 4px
 
