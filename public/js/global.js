@@ -318,6 +318,38 @@ $( document ).ready(function() {
                     'translate(' + x + 'px, ' + y + 'px)';
         });
 
+    $(".decline-button").click( function() {
+        $('.applicants .applicant').each(function(){
+            if ($(this).find('.checkbox input')[0].checked) {
+               $(this).hide();
+                uncheck();
+
+            }
+
+        });
+        }
+    );
+    function uncheck()
+    {
+        var uncheck=document.getElementsByTagName('input');
+        for(var i=0;i<uncheck.length;i++)
+        {
+            if(uncheck[i].type=='checkbox')
+            {
+                uncheck[i].checked=false;
+            }
+        }
+    }
+    $(".approve-button").click( function() {
+            $('.applicants .applicant').each(function(){
+                if (!$(this).find('.checkbox input')[0].checked) {
+                    $(this).hide();
+                    uncheck();
+                }
+
+            });
+        }
+    );
 
 
 });
