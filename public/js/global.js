@@ -151,9 +151,9 @@ $( document ).ready(function() {
                     '<label for="workAddress">New work address</label></br>',
                     '<input name="workAddress" type="text" placeholder="New work address" value="83 Grand Street, Auckland"></br>',
                     '<label for="supervisor">Supervisor name (optional)</label></br>',
-                    '<input name="supervisor" type="text" placeholder="Supervisor name (optional)" value=""></br>',
+                    '<input name="supervisor" type="text" placeholder="Supervisor name (optional)" value="Bradley Rodgers"></br>',
                     '<label for="dueDate">Offer due date</label></br>',
-                    '<input name="dueDate" type="text" placeholder="Offer due date">',
+                    '<input name="dueDate" type="text" placeholder="Offer due date" value="14/7/2017">',
                     '</div>'
                   ].join(''),
                   buttons:
@@ -171,7 +171,7 @@ $( document ).ready(function() {
                         '&workAddress=',encodeURIComponent(data.workAddress),
                         '&supervisor=',encodeURIComponent(data.supervisor),
                         '&dueDate=',encodeURIComponent(data.dueDate)
-                      ]
+                      ].join('');
                     }
                   }
                 })
