@@ -28,11 +28,15 @@ block content
       section
         select#employment-type.required
           option(name='employment-type', value='employment type') employment type
+          option(name='employment-type', value='employment type') permanent
+          option(name='employment-type', value='employment type') employment type
         br
         span $
         input#per-hour-payment.required.small(name='per-hour-payment', type='text')
         span  per hour,
         select#payment-period.required
+          option(name='payment-period', value='monthly') monthly
+          option(name='payment-period', value='weekly') weekly
           option(name='payment-period', value='fortnightly') fortnightly
         br
         input#hours.required.small(name='hours', type='text')

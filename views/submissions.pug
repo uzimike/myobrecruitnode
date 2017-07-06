@@ -35,20 +35,20 @@ block content
   
   ul.table-menu
     li
-      a
+      a.decline-button
         .icon.small.trash
         span Decline
     li
-      a
+      a.approve-button
         .icon.small.approve
         span Shortlist
     li
-      a
+      a.hire-button
         .icon.small.employee
         span Hire
   
   mixin tablerow(name, email, phone, testscore)
-    tr
+    tr.applicant
       td.checkbox 
         input(type="checkbox")
       td.name= name
@@ -57,7 +57,7 @@ block content
       td.testscore.hidden= testscore
   
   table.applicants
-    tr
+    tr.head
       th.checkbox
       th.name Name
       th.email Email

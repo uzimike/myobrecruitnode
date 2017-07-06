@@ -219,9 +219,10 @@ div.new-form {
       .whole-form-building-container .side-boxes .drag-box h3 {
         text-align: center; }
   .whole-form-building-container .form-building-container {
-    width: 70%; }
+    width: 70%;
+    margin-bottom: 40px; }
     .whole-form-building-container .form-building-container .inner-container {
-      padding: 0 30px;
+      padding: 0 0 0 30px;
       position: relative; }
       .whole-form-building-container .form-building-container .inner-container .inner-inner-container {
         padding: 25px 30px;
@@ -286,13 +287,23 @@ div.new-form {
   font-size: 17px; }
 
 .vex.vex-theme-os .vex-dialog-button.vex-dialog-button-primary {
-  background-color: #78019d !important; }
+  background-color: #78019d !important;
+  letter-spacing: 0;
+  border-radius: 0; }
 
 .vex.vex-theme-os .vex-content {
   width: 800px; }
 
 .vex-field-wrapper {
   margin: 10px 15px 30px; }
+
+.qr-container {
+  overflow: hidden;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -ms-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease; }
 
 div.clipboard {
   width: 100%;
@@ -313,7 +324,7 @@ div.clipboard {
     background-color: #78019d;
     color: #fff;
     line-height: 30px;
-    font-size: 15px;
+    font-size: 15.5px;
     cursor: pointer; }
 
 .content.inner-container > div.clipboard {
@@ -326,11 +337,19 @@ div.clipboard {
 
 p.qr-link {
   text-align: center;
-  font-size: 15px; }
+  font-size: 15px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
   p.qr-link a {
     text-decoration: underline; }
     p.qr-link a:hover {
       cursor: pointer; }
+    p.qr-link a.hide {
+      pointer-events: none;
+      opacity: 0; }
 
 .slidecbcontainer {
   margin-bottom: 10px; }
@@ -397,6 +416,8 @@ ul.table-menu {
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
+    ul.table-menu li a {
+      display: inline-block; }
     ul.table-menu li:hover {
       transform: translateY(-6px); }
     ul.table-menu li .icon {

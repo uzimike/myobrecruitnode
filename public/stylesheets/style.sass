@@ -235,8 +235,9 @@ div.new-form
         text-align: center
   .form-building-container
     width: 70%
+    margin-bottom: 40px
     .inner-container
-      padding: 0 30px
+      padding: 0 0 0 30px
       position: relative
       .inner-inner-container
         padding: 25px 30px
@@ -305,12 +306,22 @@ div.new-form
 
 .vex.vex-theme-os .vex-dialog-button.vex-dialog-button-primary
   background-color: $purp !important
+  letter-spacing: 0
+  border-radius: 0
 
 .vex.vex-theme-os .vex-content
   width: 800px
 
 .vex-field-wrapper
   margin: 10px 15px 30px
+
+.qr-container
+  overflow: hidden
+  -webkit-transition: all 0.6s ease
+  -moz-transition: all 0.6s ease
+  -ms-transition: all 0.6s ease
+  -o-transition: all 0.6s ease
+  transition: all 0.6s ease
 
 div.clipboard
   width: 100%
@@ -331,7 +342,7 @@ div.clipboard
     background-color: $purp
     color: #fff
     line-height: 30px
-    font-size: 15px
+    font-size: 15.5px
     cursor: pointer
 
 .content.inner-container > div.clipboard
@@ -345,11 +356,18 @@ div.clipboard
 p.qr-link
   text-align: center
   font-size: 15px
+  -webkit-transition: all 0.3s ease
+  -moz-transition: all 0.3s ease
+  -ms-transition: all 0.3s ease
+  -o-transition: all 0.3s ease
+  transition: all 0.3s ease
   a
     text-decoration: underline
-    di
     &:hover
       cursor: pointer
+    &.hide
+      pointer-events: none
+      opacity: 0
 
 
 .slidecbcontainer
@@ -417,6 +435,8 @@ ul.table-menu
     -ms-transition: all 0.3s ease
     -o-transition: all 0.3s ease
     transition: all 0.3s ease
+    a
+      display: inline-block
     &:hover
       transform: translateY(-6px)
     .icon
